@@ -111,3 +111,71 @@ class Project:
         print("Idioma:", self.language)
 
         print("=" * 60)
+
+
+    # -------------------------------------------------
+
+    def __getitem__(self, index):
+
+        if isinstance(index, int):
+
+            if index <= 0:
+
+                raise IndexError("Los capítulos comienzan en 1.")
+
+            return self.chapters[index - 1]
+
+        raise TypeError("Índice inválido.")
+
+    # -------------------------------------------------
+
+    def __len__(self):
+
+        return len(self.chapters)
+
+    # -------------------------------------------------
+
+    def current(self):
+
+        return self[self.current_chapter + 1]
+
+    # -------------------------------------------------
+
+    def next(self):
+
+        if self.current_chapter < len(self.chapters) - 1:
+
+            self.current_chapter += 1
+
+        return self.current()
+
+    # -------------------------------------------------
+
+    def previous(self):
+
+        if self.current_chapter > 0:
+
+            self.current_chapter -= 1
+
+        return self.current()
+
+    # -------------------------------------------------
+
+    def first(self):
+
+        self.current_chapter = 0
+
+        return self.current()
+
+    # -------------------------------------------------
+
+    def last(self):
+
+        self.current_chapter = len(self.chapters) - 1
+
+        return self.current()
+    # -------------------------------------------------
+
+    def __iter__(self):
+
+        return iter(self.chapters)

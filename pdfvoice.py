@@ -1,16 +1,16 @@
 """
 pdfvoice.py
 
-Clase principal de PDFVoice.
+Fachada principal del proyecto PDFVoice.
 """
+
+from __future__ import annotations
 
 from pathlib import Path
 
-from core.extractor import PDFExtractor
-from core.splitter import ChapterSplitter
-from core.chapter_writer import ChapterWriter
-from core.project_manager import ProjectManager
+import utils
 
+from core.project_manager import ProjectManager
 from core.tts.manager import TTSManager
 
 from player.mpv_player import MPVPlayer
@@ -18,67 +18,64 @@ from player.mpv_player import MPVPlayer
 
 class PDFVoice:
 
-    def __init__(self, pdf):
+    # ---------------------------------------------------------
 
-        self.pdf = Path(pdf)
+    def __init__(self, pdf_file):
+
+        self.pdf_file = Path(pdf_file)
 
         self.project = None
 
-        self.tts = TTSManager()
+        self.tts = None
 
         self.player = MPVPlayer()
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
+
+    @property
+    def ready(self):
+
+        return self.project is not None
+
+    # ---------------------------------------------------------
 
     def prepare(self):
 
-        print()
+        utils.info("Abriendo proyecto...")
 
-        print("Preparando proyecto...")
+        manager = ProjectManager(self.pdf_file)
 
-        extractor = PDFExtractor(self.pdf)
+        self.project = manager.prepare()
 
-        text_file = extractor.extract()
+        self.tts = TTSManager(
+            self.project.audio_dir
+        )
 
-        splitter = ChapterSplitter(text_file)
+        utils.ok("Proyecto preparado.")
 
-        splitter.load()
+        return self.project
 
-        splitter.detect()
-
-        splitter.build()
-
-        writer = ChapterWriter(splitter)
-
-        writer.save()
-
-        self.project = ProjectManager(writer.project_dir)
-
-        self.project.load()
-
-        print()
-
-        print("Proyecto listo.")
-
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def chapters(self):
 
         return self.project.chapters
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def list(self):
 
-        for chapter in self.project.chapters:
+        print()
+
+        for chapter in self.project:
 
             print(
-
                 f"{chapter.number:02d} - {chapter.title}"
-
             )
 
-    # --------------------------------------------------
+        print()
+
+    # ---------------------------------------------------------
 
     def generate(self, number):
 
@@ -86,71 +83,111 @@ class PDFVoice:
 
         self.tts.generate(chapter)
 
-    # --------------------------------------------------
+        return chapter.audio_file
+
+    # ---------------------------------------------------------
+
+    def generate_all(self):
+
+        self.tts.generate_all(
+            self.project.chapters
+        )
+
+    # ---------------------------------------------------------
 
     def play(self, number):
 
         chapter = self.project[number]
 
-        if not chapter.audio_file.exists():
+        self.project.current_chapter = number - 1
+
+        if (
+            chapter.audio_file is None
+            or
+            not Path(chapter.audio_file).exists()
+        ):
 
             self.generate(number)
 
         self.player.play(chapter.audio_file)
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def pause(self):
 
         self.player.pause()
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def resume(self):
 
         self.player.resume()
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def stop(self):
 
         self.player.stop()
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def next(self):
 
-        self.project.next()
+        chapter = self.project.next()
 
-        self.play(self.project.current)
+        self.play(chapter.number)
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def previous(self):
 
-        self.project.previous()
+        chapter = self.project.previous()
 
-        self.play(self.project.current)
+        self.play(chapter.number)
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
+
+    def restart(self):
+
+        self.player.restart()
+
+    # ---------------------------------------------------------
+
+    def seek(self, seconds):
+
+        self.player.seek(seconds)
+
+    # ---------------------------------------------------------
 
     def speed(self, value):
 
         self.player.speed(value)
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def volume(self, value):
 
         self.player.volume(value)
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
 
     def status(self):
 
         return self.player.status()
 
-    # --------------------------------------------------
+    # ---------------------------------------------------------
+
+    def current(self):
+
+        return self.project.current()
+
+    # ---------------------------------------------------------
+
+    def summary(self):
+
+        self.project.summary()
+
+    # ---------------------------------------------------------
 
     def close(self):
 
