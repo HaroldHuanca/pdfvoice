@@ -1,35 +1,34 @@
+from pathlib import Path
+import time
+
 from pdfvoice import PDFVoice
 
-pdf = PDFVoice()
+pdf = PDFVoice(
+    Path.home() /
+    "Descargas" /
+    "tesis.pdf"
+)
 
-pdf.open("TecnicasPromptFinalPDF.pdf")
-
-print()
-
-for chapter in pdf.chapters():
-
-    print(chapter.number, "-", chapter.title)
+pdf.prepare()
 
 print()
 
-pdf.play()
+pdf.list()
 
-input("ENTER -> siguiente")
+print()
 
-pdf.next()
+pdf.play(1)
 
-input("ENTER -> velocidad 1.5x")
-
-pdf.speed(1.5)
-
-input("ENTER -> pausa")
+time.sleep(5)
 
 pdf.pause()
 
-input("ENTER -> continuar")
+time.sleep(2)
 
 pdf.resume()
 
-input("ENTER -> cerrar")
+time.sleep(5)
+
+print(pdf.status())
 
 pdf.close()

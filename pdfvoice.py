@@ -1,185 +1,157 @@
 """
 pdfvoice.py
 
-Fachada principal de PDFVoice.
+Clase principal de PDFVoice.
 """
-
-from __future__ import annotations
 
 from pathlib import Path
 
-import utils
-
+from core.extractor import PDFExtractor
+from core.splitter import ChapterSplitter
+from core.chapter_writer import ChapterWriter
 from core.project_manager import ProjectManager
+
 from core.tts.manager import TTSManager
+
 from player.mpv_player import MPVPlayer
 
 
 class PDFVoice:
 
-    def __init__(self):
+    def __init__(self, pdf):
+
+        self.pdf = Path(pdf)
 
         self.project = None
 
-        self.tts = None
+        self.tts = TTSManager()
 
         self.player = MPVPlayer()
 
-        self.current = 0
+    # --------------------------------------------------
 
-    # ---------------------------------------------------------
+    def prepare(self):
 
-    def open(self, pdf):
+        print()
 
-        """
-        Abre un nuevo proyecto.
-        """
+        print("Preparando proyecto...")
 
-        utils.info("Abriendo proyecto...")
+        extractor = PDFExtractor(self.pdf)
 
-        self.project = ProjectManager(pdf).prepare()
+        text_file = extractor.extract()
 
-        self.tts = TTSManager(self.project.audio_dir)
+        splitter = ChapterSplitter(text_file)
 
-        self.current = 0
+        splitter.load()
 
-        utils.ok("Proyecto listo.")
+        splitter.detect()
 
-    # ---------------------------------------------------------
+        splitter.build()
 
-    @property
-    def current_chapter(self):
+        writer = ChapterWriter(splitter)
 
-        return self.project.chapters[self.current]
+        writer.save()
 
-    # ---------------------------------------------------------
+        self.project = ProjectManager(writer.project_dir)
 
-    def play(self):
+        self.project.load()
 
-        """
-        Reproduce el capítulo actual.
-        """
+        print()
 
-        chapter = self.current_chapter
+        print("Proyecto listo.")
 
-        if not chapter.generated:
+    # --------------------------------------------------
 
-            utils.info("Generando audio...")
+    def chapters(self):
 
-            self.tts.generate(chapter)
+        return self.project.chapters
+
+    # --------------------------------------------------
+
+    def list(self):
+
+        for chapter in self.project.chapters:
+
+            print(
+
+                f"{chapter.number:02d} - {chapter.title}"
+
+            )
+
+    # --------------------------------------------------
+
+    def generate(self, number):
+
+        chapter = self.project[number]
+
+        self.tts.generate(chapter)
+
+    # --------------------------------------------------
+
+    def play(self, number):
+
+        chapter = self.project[number]
+
+        if not chapter.audio_file.exists():
+
+            self.generate(number)
 
         self.player.play(chapter.audio_file)
 
-    # ---------------------------------------------------------
+    # --------------------------------------------------
 
     def pause(self):
 
         self.player.pause()
 
-    # ---------------------------------------------------------
+    # --------------------------------------------------
 
     def resume(self):
 
         self.player.resume()
 
-    # ---------------------------------------------------------
+    # --------------------------------------------------
 
     def stop(self):
 
         self.player.stop()
 
-    # ---------------------------------------------------------
+    # --------------------------------------------------
+
+    def next(self):
+
+        self.project.next()
+
+        self.play(self.project.current)
+
+    # --------------------------------------------------
+
+    def previous(self):
+
+        self.project.previous()
+
+        self.play(self.project.current)
+
+    # --------------------------------------------------
 
     def speed(self, value):
 
         self.player.speed(value)
 
-    # ---------------------------------------------------------
+    # --------------------------------------------------
 
-    def next(self):
+    def volume(self, value):
 
-        if self.current >= len(self.project.chapters) - 1:
+        self.player.volume(value)
 
-            utils.warn("Último capítulo.")
+    # --------------------------------------------------
 
-            return
+    def status(self):
 
-        self.current += 1
+        return self.player.status()
 
-        self.play()
-
-    # ---------------------------------------------------------
-
-    def previous(self):
-
-        if self.current == 0:
-
-            utils.warn("Primer capítulo.")
-
-            return
-
-        self.current -= 1
-
-        self.play()
-
-    # ---------------------------------------------------------
-
-    def chapter(self, number):
-
-        """
-        Cambia al capítulo indicado.
-
-        number empieza en 1.
-        """
-
-        number -= 1
-
-        if number < 0:
-
-            return
-
-        if number >= len(self.project.chapters):
-
-            return
-
-        self.current = number
-
-        self.play()
-
-    # ---------------------------------------------------------
-
-    def chapters(self):
-
-        """
-        Devuelve todos los capítulos.
-        """
-
-        return self.project.chapters
-
-    # ---------------------------------------------------------
-
-    def info(self):
-
-        chapter = self.current_chapter
-
-        return {
-
-            "chapter": chapter.number,
-
-            "title": chapter.title,
-
-            "audio": chapter.audio_file,
-
-            "generated": chapter.generated,
-
-            "total": len(self.project.chapters),
-
-        }
-
-    # ---------------------------------------------------------
+    # --------------------------------------------------
 
     def close(self):
 
         self.player.quit()
-
-        utils.ok("Proyecto cerrado.")
