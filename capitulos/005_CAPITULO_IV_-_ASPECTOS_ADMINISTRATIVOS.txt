@@ -1,0 +1,95 @@
+CAPITULO IV
+                         ASPECTOS ADMINISTRATIVOS
+
+4.1. Presupuesto
+
+                     TABLA 2. Tabla de Presupuesto de la Investigación
+
+                                                               Precio
+          Macro
+                         Ítem         Cantidad     Unidad     unitario   Total (S/.)
+        categoría
+                                                                (S/.)
+                    Investigadores
+                                         3       Personas   S/2000.00    S/6000.00
+                    tesistas
+        Recursos
+        Humanos     Asesoría
+                    metodológica         1       Servicio   S/ 150.00    S/150.00
+                    ocasional
+
+                    Computadora
+                                         1       Equipo     S/3000.00    S/3000.00
+                    Ryzen 5 3600
+
+      Equipamiento Memoria RAM
+                   16 GB                 1       Componente S/0.00       S/0.00
+                   (incluida)
+                    Conexión a                                           S/
+                                         6       Meses      S/80.00
+                    Internet                                             480.00
+                    Visual Studio
+                                         1       Licencia   S/ 0.00      S/0.00
+                    Code
+                    GitHub               1       Servicio   S/0.00       S/0.00
+                    Python               1       Software   S/0.00       S/0.00
+        Software    SonarQube
+                    Community            1       Software   S/0.00       S/0.00
+                    Edition
+                    Radon                1       Librería   S/0.00       S/0.00
+                    Bandit               1       Librería   S/0.00       S/0.00
+                    Consumo de
+                    API de IA            1       Servicio   S/350.00     S/350.00
+                    (tokens)
+        Servicios
+                    Electricidad y
+                    consumo              6       Meses      S/40.00      S/240.00
+                    energético
+
+                    Impresiones y
+                                         1       Lote       S/120.00     S/120.00
+                    documentación
+          Otros
+                    Contingencias
+                                         1       Fondo      S/150.00     S/150.00
+                    técnicas
+
+                                                            Total        S/10,490.00
+
+                                                                                       53
+4.2. Cronograma
+
+   El cronograma de actividades permitió planificar y organizar temporalmente las tareas
+   necesarias para el desarrollo de la presente investigación y la implementación de la
+   plataforma experimental. Su elaboración facilitó la distribución ordenada de las
+   actividades relacionadas con la revisión bibliográfica, construcción del marco teórico y
+   conceptual, definición metodológica, desarrollo de la plataforma de software, ejecución
+   de los experimentos y análisis de los resultados obtenidos.
+
+   La planificación temporal se estableció para el periodo comprendido entre julio y
+   noviembre de 2026. Durante este periodo se programaron actividades de investigación
+   documental, diseño experimental, desarrollo de la plataforma web, integración de
+   herramientas de análisis de código, construcción de prompts experimentales, ejecución
+   de pruebas automatizadas, obtención de métricas de calidad del software y análisis
+   estadístico de los datos recolectados. Asimismo, se contemplaron actividades destinadas
+   a la interpretación de resultados, redacción del informe final, formulación de
+   conclusiones y recomendaciones, y realización de correcciones finales previas a la
+   entrega de la investigación.
+
+   La representación gráfica del cronograma se desarrolló mediante un diagrama de Gantt
+   elaborado en ProjectLibre, permitiendo visualizar la secuencia, duración y superposición
+   de las actividades programadas. Del mismo modo, la planificación consideró un
+   calendario de trabajo continuo durante toda la semana, incluyendo actividades realizadas
+   los días sábados y domingos, con el propósito de optimizar el tiempo disponible y
+   asegurar el cumplimiento de los plazos establecidos para la investigación.
+
+
+
+
+                                                                                        54
+FIGURA1. Diagrama de Gantt del Cronograma de Actividades
+
+
+
+
+                                                           55

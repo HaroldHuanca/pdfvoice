@@ -1,0 +1,101 @@
+[
+    {
+        "number": 1,
+        "title": "INTRODUCCIÓN",
+        "file": "001_INTRODUCCIÓN.txt",
+        "words": 511,
+        "characters": 3873,
+        "start_line": 142,
+        "end_line": 204
+    },
+    {
+        "number": 2,
+        "title": "CAPITULO I - EL PROBLEMA DE INVESTIGACIÓN",
+        "file": "002_CAPITULO_I_-_EL_PROBLEMA_DE_INVESTIGACIÓN.txt",
+        "words": 2423,
+        "characters": 20245,
+        "start_line": 204,
+        "end_line": 533
+    },
+    {
+        "number": 3,
+        "title": "CAPITULO II - MARCO TEÓRICO",
+        "file": "003_CAPITULO_II_-_MARCO_TEÓRICO.txt",
+        "words": 7176,
+        "characters": 62408,
+        "start_line": 533,
+        "end_line": 1560
+    },
+    {
+        "number": 4,
+        "title": "CAPITULO III - METODOLOGÍA",
+        "file": "004_CAPITULO_III_-_METODOLOGÍA.txt",
+        "words": 3672,
+        "characters": 32840,
+        "start_line": 1560,
+        "end_line": 2249
+    },
+    {
+        "number": 5,
+        "title": "CAPITULO IV - ASPECTOS ADMINISTRATIVOS",
+        "file": "005_CAPITULO_IV_-_ASPECTOS_ADMINISTRATIVOS.txt",
+        "words": 373,
+        "characters": 4609,
+        "start_line": 2249,
+        "end_line": 2344
+    },
+    {
+        "number": 6,
+        "title": "REFERENCIAS",
+        "file": "006_REFERENCIAS.txt",
+        "words": 810,
+        "characters": 8338,
+        "start_line": 2344,
+        "end_line": 2486
+    },
+    {
+        "number": 7,
+        "title": "ANEXOS - Anexo A. Matriz de Consistencia",
+        "file": "007_ANEXOS_-_Anexo_A_Matriz_de_Consistencia.txt",
+        "words": 673,
+        "characters": 8954,
+        "start_line": 2486,
+        "end_line": 2605
+    },
+    {
+        "number": 8,
+        "title": "I. DATOS DEL EXPERIMENTO - ID del experimento (ID_EXPERIMENTO):",
+        "file": "008_I_DATOS_DEL_EXPERIMENTO_-_ID_del_experimento_ID_EXPERIMENTO.txt",
+        "words": 66,
+        "characters": 576,
+        "start_line": 2605,
+        "end_line": 2646
+    },
+    {
+        "number": 9,
+        "title": "II. REGISTRO DE MÉTRICAS DE CALIDAD DEL CÓDIGO - DIMENSIÓN 1: EXACTITUD FUNCIONAL",
+        "file": "009_II_REGISTRO_DE_MÉTRICAS_DE_CALIDAD_DEL_CÓDIGO_-_DIMENSIÓN_1_EXACTITUD_FUNCIONAL.txt",
+        "words": 162,
+        "characters": 1964,
+        "start_line": 2646,
+        "end_line": 2712
+    },
+    {
+        "number": 10,
+        "title": "III. RESULTADOS CONSOLIDADOS",
+        "file": "010_III_RESULTADOS_CONSOLIDADOS.txt",
+        "words": 24,
+        "characters": 419,
+        "start_line": 2712,
+        "end_line": 2729
+    },
+    {
+        "number": 11,
+        "title": "IV. OBSERVACIONES",
+        "file": "011_IV_OBSERVACIONES.txt",
+        "words": 30,
+        "characters": 387,
+        "start_line": 2729,
+        "end_line": 2754
+    }
+]

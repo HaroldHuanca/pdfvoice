@@ -1,0 +1,62 @@
+II. REGISTRO DE MÉTRICAS DE CALIDAD DEL CÓDIGO
+DIMENSIÓN 1: EXACTITUD FUNCIONAL
+
+     Nº total de pruebas       Nº de pruebas superadas        Porcentaje superadas (%)
+
+
+
+
+Rango esperado: 0% – 100%
+
+Fuente: Pruebas Unitarias
+
+
+
+
+DIMENSIÓN 2: MANTENIBILIDAD
+Indicador 1: Maintainability Index (MI)
+Valor obtenido:                                  Rango                 Interpretación
+
+                                            85 – 100 puntos      Muy alta mantenibilidad
+Rango: 0 puntos – 100 puntos
+
+Fuente: SonarQube                            65 – 84 puntos      Buena mantenibilidad
+
+                                             40 – 64 puntos      Mantenibilidad moderada
+
+                                             20 – 39 puntos      Mantenibilidad baja
+
+                                              0 – 19puntos       Muy baja mantenibilidad
+
+
+
+
+Indicador 2: Technical Debt Ratio (TDR)
+Valor obtenido (%):                              Rango                 Interpretación
+
+                                                0% – 5%          Muy baja deuda técnica
+Rango: 0% - 100%
+
+Fuente: SonarQube                             5.1% – 10%         Baja deuda técnica
+
+                                              10.1% – 20%        Moderada deuda técnica
+
+                                                 > 20%           Alta deuda técnica
+
+
+
+
+                                                                                           65
+DIMENSIÓN 3: COMPLEJIDAD
+Indicador: Complejidad Ciclomática
+Valor obtenido:                      Rango                      Interpretación
+
+                                      1–5              Muy simple
+Rango: 1 o superior (valor entero)
+Fuente: Radon                        6 – 10            Simple
+
+                                     11 – 20           Moderadamente compleja
+
+                                     21 – 50           Compleja
+
+                                      > 50             Muy compleja

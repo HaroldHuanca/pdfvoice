@@ -1,0 +1,117 @@
+ANEXOS
+
+                                                                            Anexo A. Matriz de Consistencia
+
+Problema de Investigación                Objetivo de Investigación                   Hipótesis de Investigación                   Variables                       Metodología
+¿Cómo influyen       las técnicas   de   Determinar la influencia de las técnicas    Las técnicas de estructuración de            Variable       Independiente:   Enfoque:
+estructuración   de prompts    en la     de estructuración de prompts en la          prompts   influyen      significativa   y    Técnicas de prompts             Cuantitativo
+calidad del código generado por el       calidad del código generado por el          positivamente en la calidad del código       Tratamientos:                   Tipo:
+modelo de lenguaje de gran escala        modelo de lenguaje de gran escala           generado por el modelo de lenguaje de        • Zero-Shot prompting           Aplicada
+ChatGPT-4o?                              ChatGPT-4o.                                 gran escala ChatGPT-4o.                      • Few-Shot prompting            Alcance:
+Problemas Específicos                    Objetivos Específicos                       Hipótesis Específicas                        • Chain-of-Thought              Explicativo
+PE1. ¿Cómo influyen las técnicas de      OE1.      Determinar la influencia de las   HE1.          Las       técnicas        de     prompting                     Método:
+estructuración   de prompts    en la     técnicas de estructuración de prompts en    estructuración de prompts influyen           • Role prompting                Hipotético-deductivo
+exactitud   funcional    del   código    la   exactitud   funcional   del   código   significativa y positivamente en la          Variable        Dependiente:    Diseño:
+generado por el modelo de lenguaje de    generado por el modelo de lenguaje de       exactitud del código generado por el         Calidad del Código Generado     Cuasi-experimental         con
+gran escala ChatGPT-4o?                  gran escala ChatGPT-4o.                     modelo de lenguaje de gran escala            Dimensiones:                    medidas repetidas
+                                                                                     ChatGPT-4o.                                  • Exactitud funcional           Población:
+PE2. ¿Cómo influyen las técnicas de      OE2.      Determinar la influencia de las   HE2.          Las       técnicas        de   • Mantenibilidad                Problemas de programación de
+estructuración   de prompts    en la     técnicas de estructuración de prompts en    estructuración de prompts influyen                                           LeetCode/HackerRank
+                                                                                                                                  • Complejidad
+mantenibilidad del código generado       la mantenibilidad del código generado       significativ y positivamente en la                                           Muestra:
+por el modelo de lenguaje de gran        por el modelo de lenguaje de gran escala    mantenibilidad del código generado                                           Subconjunto no probabilístico
+escala ChatGPT-4o?                       ChatGPT-4o.                                 por el modelo de lenguaje de gran                                            e intencional
+                                                                                     escala ChatGPT-4o.                                                           Técnica:
+
+PE3. ¿Cómo influyen las técnicas de      OE3.      Determinar la influencia de las   HE3.          Las       técnicas        de                                   Análisis documental
+estructuración   de prompts    en la     técnicas de estructuración de prompts en    estructuración de prompts mejoran                                            Instrumentos:
+complejidad del código generado por      la complejidad del código generado por      significativamente en la complejidad                                         Ficha de registro experimental
+el modelo de lenguaje de gran escala     el modelo de lenguaje de gran escala        del código generado por el modelo de
+ChatGPT-4o?                              ChatGPT-4o.                                 lenguaje de gran escala ChatGPT-4o.
+
+
+
+                                                                                                                                                                                               60
+                                           Anexo B. Tabla de Operacionalización de Variables
+
+                       Parametros de                              Definición
+    Variable                                 Tratamientos                            Técnica      Instrumento        Escala
+                          Control                                Operacional
+                                              Zero-Shot       Prompt sin ejemplos
+                     • LLM: ChatGPT-4º
+     Variable        • Temperatura: 0.0                         Prompt con
+                                               Few-Shot
+ Independiente:      • Lenguaje: Python                           ejemplos
+   Técnicas de       • Banco de                                 Prompt con          No aplica       No aplica        Nominal
+estructuración de      problemas: 30       Chain-of-Thought razonamiento paso a
+     prompts           ejercicios de                                paso
+                       LeetCode                              Prompt basado en
+                                            Role Prompting
+                                                                    roles
+                                                                 Definición
+    Variable            Dimensiones          Indicadores                             Técnica      Instrumento        Escala
+                                                                Operacional
+                                                               Relación entre
+                                              % pruebas
+                     Exactitud funcional                    pruebas aprobadas y
+                                              superadas
+                                                                 ejecutadas
+                                                                   Índice de
+     Variable                               Maintainability      mantenibilidad
+  Dependiente:                                  Index            calculado por       Análisis    Ficha de registro
+                       Mantenibilidad                           análisis estático                                    Razón
+Calidad del código                                                                  documental     experimental
+     generado                               Technical Debt    Porcentaje estimado
+                                                Ratio           de deuda técnica
+                                                              Número de caminos
+                                             Complejidad
+                        Complejidad                            independientes de
+                                              ciclomática
+                                                                   ejecución
+
+
+
+
+                                                                                                                               61
+Anexo C. Diagrama de Componentes de la Plataforma de Experimentación
+
+
+
+
+                                                                  62
+  Anexo D. Diagrama de Flujo Experimental(Diagrama de Actividades)
+
+
+
+
+Anexo E. Diagrama de Entidad Relación de la Base de Datos experimental
+
+
+
+
+                                                                     63
+                         Anexo F. Ficha de Registro Experimental
+
+
+  FICHA DE REGISTRO EXPERIMENTAL
+  PARA LA EVALUACIÓN DE LA CALIDAD DEL CÓDIGO GENERADO
+
+
+  Proyecto: Influencia de las técnicas de estructuración de prompts en la calidad del código
+  generado por el modelo de lenguaje de gran escala ChatGPT-4o.
+
+
+  Modo de registro de datos: La presente ficha constituye un instrumento de registro
+  experimental automatizado. Los datos consignados son obtenidos directamente por la
+  plataforma de evaluación desarrollada para la investigación, mediante la ejecución de
+  pruebas funcionales automatizadas y herramientas de análisis estático de código. En
+  consecuencia, el registro de la información no depende de la percepción o juicio de un
+  evaluador humano, garantizando objetividad, consistencia y reproducibilidad en la
+  recolección de datos.
+
+
+
+
+ Código de registro (ID_RESULTADO):             Fecha de evaluación:
+
+ ___________________________________            ___________________________________

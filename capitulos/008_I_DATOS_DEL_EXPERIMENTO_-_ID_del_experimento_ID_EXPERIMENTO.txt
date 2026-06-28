@@ -1,0 +1,37 @@
+I. DATOS DEL EXPERIMENTO
+
+
+ID del experimento (ID_EXPERIMENTO):
+
+
+Problema evaluado (ID_PROBLEMA):
+
+
+
+Título del problema:
+
+
+
+Fecha y Hora de ejecución:
+
+
+
+Tiempo de Respuesta del modelo:
+
+
+Nivel de dificultad:
+    ( ) Fácil
+    ( ) Medio
+    ( ) Difícil
+Lenguaje de programación:
+Python
+
+Modelo utilizado:
+ChatGPT-4o
+
+                                                                                               64
+Técnica de estructuración de prompt aplicada:
+    ( ) Zero-Shot Prompting
+    ( ) Few-Shot Prompting
+    ( ) Chain-of-Thought Prompting
+    ( ) Role Prompting

@@ -1,0 +1,142 @@
+REFERENCIAS
+
+1. HOU, Xinyi, ZHAO, Yanjie, LIU, Yue, YANG, Zhou, WANG, Kailong, LI, Li, LUO,
+  Xiapu, LO, David, GRUNDY, John and WANG, Haoyu. Large Language Models
+  for Software Engineering: A Systematic Literature Review. ACM Transactions on
+  Software Engineering and Methodology. Online. November 2024. Vol. 33, no. 8,
+  p. 1–79.            DOI 10.1145/3695988.                       Avaiable            from:
+  https://dl.acm.org/doi/epdf/10.1145/3695988
+
+2. LIU, Yue, LE-CONG, Thanh, WIDYASARI, Ratnadira, TANTITHAMTHAVORN,
+  Chakkrit, LI, Li, LE, Xuan-Bach D and LO, David. Refining ChatGPT-Generated
+  Code: Characterizing and Mitigating Code Quality Issues. ACM Transactions on
+  Software Engineering and Methodology. Online. June 2024. Vol. 33, no. 5, p. 1–26.
+  DOI 10.1145/3643674.                           Available                           from:
+  https://dl.acm.org/doi/epdf/10.1145/3643674
+
+3. ASFANDYAR, Muhammad Waseem Akhtar. EVALUATING THE IMPACT OF AI
+  CODE GENERATED OF SOFTWARE QUALITY AND OBSERVED STUDY OF
+  MAINTAINABILITY,         SECURITY AND              PERFORMANCE. Spectrum              of
+  Engineering Sciences. Online. December 2025. Vol. 3, no. 12, p. 1379–1389.
+  DOI 10.5281/ZENODO.18172279.                                   Available           from:
+  https://thesesjournal.com/index.php/1/article/download/1810/1360
+
+4. ALJOHANI, Ahmed and DO, Hyunsook. PromptDebt: A Comprehensive Study of
+  Technical Debt Across LLM Projects. In : Proceedings of the 29th International
+  Conference on Evaluation and Assessment in Software Engineering. Online. Istanbul
+  Turkiye :    ACM,      June       2025.   p. 371–382.          ISBN 979-8-4007-1385-9.
+  DOI 10.1145/3756681.3756976.                          Available                    from:
+  https://dl.acm.org/doi/epdf/10.1145/3756681.3756976
+
+5. GOBIERNO DEL PERÚ. Estrategia Nacional de Inteligencia Artificial 2021-2026:
+  Informe     de   Progreso     y    Actualización     Online.      Lima,    Perú,   2024.
+  [Accessed 21 June 2026].                           Available                       from:
+  https://cdn.www.gob.pe/uploads/document/file/8686097/7190386-propuesta_-
+  estrategia-nacional-de-inteligencia-artificial.pdf?v=1759424094
+
+
+
+
+                                                                                       56
+6. PAZ FERNÁNDEZ, Crishtian Brenon, DIAZ SIFUENTES, Sergio Helí and
+      TORRES VILLANUEVA, Marcelino. Optimización de Modelos de Lenguaje
+      Grande (LLMs) a través del Prompt Engineering. Innovation and Software. Online.
+      September 2025. Vol. 6, no. 2, p. 6–11. DOI 10.48168/innosoft.s24.a212. Available
+      from: https://revistas.ulasalle.edu.pe/innosoft/article/view/212/381
+
+7. GOBIERNO REGIONAL DE CUSCO. Plan de Gobierno Digital 2025-2027
+      Online.   Cusco,     Perú,     2024.     [Accessed 21 June 2026].          Available   from:
+      https://transparencia.regioncusco.gob.pe/transparencia/planeamiento_organizacion/
+      gobiernodigital/PLAN%20DE%20GOBIERNO%20DIGITAL%202025-
+      2027%20GORE%20CUSCO%20-[VB][VB].pdf
+
+8. ISO/IEC. ISO/IEC 25010:2011 Systems and software engineering – Systems and
+      software Quality Models. Online. International Organization for Standardization,
+      2011.              [Accessed 21 June 2026].                    Available               from:
+      https://www.iso.org/standard/35733.html
+
+9. CORDEIRO, Jonathan, NOEI, Shayan and ZOU, Ying. An Empirical Study on the
+      Code Refactoring Capability of Large Language Models. ACM Transactions on
+      Software Engineering and Methodology. Online. March 2026. P. 3801158.
+      DOI 10.1145/3801158.                               Available                           from:
+      https://dl.acm.org/doi/epdf/10.1145/3801158
+
+10.       VASWANI, Ashish, BRAIN, Google, SHAZEER, Noam, PARMAR, Niki,
+      USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N, KAISER, Łukasz and
+      POLOSUKHIN, Illia.           Attention    Is All     You   Need     Online.      [no   date].
+      [Accessed 21 June 2026]. Available from: https://arxiv.org/abs/1706.03762
+
+11.       ZHAO, Wayne Xin, ZHOU, Kun, LI, Junyi, TANG, Tianyi, WANG, Xiaolei,
+      HOU, Yupeng, MIN, Yingqian, ZHANG, Beichen, ZHANG, Junjie, DONG, Zican,
+      DU, Yifan, YANG, Chen, CHEN, Yushuo, CHEN, Zhipeng, JIANG, Jinhao, REN,
+      Ruiyang, LI, Yifan, TANG, Xinyu, LIU, Zikang, LIU, Peiyu, NIE, Jian-Yun and
+      WEN, Ji-Rong. A Survey of Large Language Models. Online. 18 March 2026.
+      Available from: http://arxiv.org/abs/2303.18223
+
+12.       KHOJAH, Ranim, DE OLIVEIRA NETO, Francisco Gomes, MOHAMAD,
+      Mazen and LEITNER, Philipp. The Impact of Prompt Programming on Function-
+
+                                                                                                57
+  Level Code Generation. IEEE Transactions on Software Engineering. Online. 2025.
+  Vol. 51,           no. 8,            p. 2381–2395.           [Accessed 21 June 2026].
+  DOI 10.1109/TSE.2025.3587794.                         Available                from:
+  https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11077752
+
+13.   GARCIA, Enio, JUNIOR, Santana, BENJAMIN, Gabriel, ARAUJO, Melissa,
+  SANTOS, Harrison, FREITAS, David, ALMEIDA, Eduardo, ANSELMO DA
+  MOTA, Paulo, NETO, Silveira, LI, Jiawei, CHUN, Jina and AHMED, Iftekhar.
+  Which Prompting Technique Should I Use? An Empirical Investigation of Prompting
+  Techniques for Software Engineering Tasks Online. 2025. [Accessed 21 June 2026].
+  Available     from:      https://github.com/prompt-study/prompt-tasks-study/tree/main
+  https://arxiv.org/abs/2506.05614
+
+14.   GHOSH PAUL, Debalina, ZHU, Hong and BAYLEY, Ian. Investigating The
+  Smells of LLM Generated Code ⋆ Online. 2025. [Accessed 21 June 2026]. Available
+  from: https://arxiv.org/abs/2510.03029
+
+15.   FANYI ZHAO, MINGZHUO YU and CHUANKAI LUO. A Comparative
+  Empirical Study of Prompting Strategies for Code Generation with Large Language
+  Models. Journal of Advanced Computing Systems. Online. 9 December 2025. Vol. 5,
+  no. 12,      p. 26–37.       DOI 10.69987/JACS.2025.51203.         Available   from:
+  https://scipublication.com/index.php/JACS/article/view/362/329
+
+16.   LI, Ruimeng, MO, Ran, ZENG, Yao, LIU, Zili, LI, Zengyang and MA, Yutao.
+  A Multi-Dimensional Quality Evaluation of Code Generated by LLM-Based Tools
+  Across Multiple Programming Languages. ACM Transactions on Software
+  Engineering and Methodology. Online. 5 March 2026. DOI 10.1145/3800582.
+  Available from: https://dl.acm.org/doi/epdf/10.1145/3800582
+
+17.   COIGNION, Tristan, QUINTON, Clément and ROUVOY, Romain. A
+  Performance Study of LLM-Generated Code on Leetcode. In : ACM International
+  Conference Proceeding Series. Online. Association for Computing Machinery, 18
+  June       2024.   p. 79–89.      [Accessed 21 June 2026].       ISBN 9798400717017.
+  DOI 10.1145/3661167.3661221.                         Available                 from:
+  https://dl.acm.org/doi/epdf/10.1145/3661167.3661221
+
+
+
+
+                                                                                    58
+18.   AZEEM, Samina, NAVEED, Muhammad Shumail, SAJID, Muhammad and
+  ALI, Imran. AI vs. Human Programmers: Complexity and Performance in Code
+  Generation. VAWKUM Transactions on Computer Sciences. Online. May 2025.
+  Vol. 13, no. 1, p. 201–216. DOI 10.21015/vtcs.v13i1.2043.          Available from:
+  https://vfast.org/journals/index.php/VTCS/article/view/2043/1695
+
+19.   PARDO MESIAS, Samuel Ricardo. Mantenibilidad de productos de software
+  según el modelo SQUARE ISO/IEC 25000. Online. 2018. Tingo María, Perú.
+  [Accessed 21 June 2026].              Available               from:              .
+  https://repositorio.unas.edu.pe/items/3b727fc4-71d9-438f-b418-df29f40b41a8
+
+20.   HERNÁNDEZ SAMPIERI, Roberto, FERNÁNDEZ COLLADO, Carlos and
+  BAPTISTA LUCIO, María del Pilar. Metodología de la Investigación. Online. 6.
+  México D.F. : McGraw-Hill / Interamericana Editores, S.A. de C.V., 2014.
+  [Accessed 21 June 2026].      ISBN 978-1-4562-2396-0.        Available       from:
+  https://www.esup.edu.pe/wp-
+  content/uploads/2020/12/2.%20Hernandez,%20Fernandez%20y%20Baptista-
+  Metodolog%C3%ADa%20Investigacion%20Cientifica%206ta%20ed.pdf
+
+
+
+
+                                                                                 59

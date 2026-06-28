@@ -1,0 +1,13 @@
+III. RESULTADOS CONSOLIDADOS
+
+
+
+ Indicador                                     Valor                  Unidad
+
+ Porcentaje de pruebas superadas                                         %
+
+ Maintainability Index (MI)                                           puntos
+
+ Technical Debt Ratio (TDR)                                              %
+
+ Complejidad Ciclomática                                           valor entero

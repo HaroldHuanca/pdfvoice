@@ -1,0 +1,689 @@
+CAPITULO III
+                                     METODOLOGÍA
+
+3.1. Enfoque, Tipo, Alcance, Método y Diseño de la Investigación
+
+    3.1.1.Enfoque de la Investigación
+
+         La investigación tendrá un enfoque cuantitativo, debido a que se trabajará con datos
+         numéricos y métricas obtenidas mediante herramientas automatizadas de
+         evaluación de calidad de software (20). En este sentido, se recopilarán indicadores
+         relacionados con complejidad ciclomática, mantenibilidad,            deuda técnica,
+         vulnerabilidades y otros aspectos medibles del código generado por el modelo de
+         lenguaje de gran escala ChatGPT-4o. Posteriormente, los datos obtenidos serán
+         analizados de manera estadística con la finalidad de comparar el comportamiento
+         de las distintas técnicas de estructuración de prompts y determinar su influencia
+         sobre la calidad del software generado automáticamente.
+
+    3.1.2.Tipo de Investigación
+
+         La presente investigación corresponde al tipo aplicada, debido a que busca generar
+         una solución tecnológica orientada a evaluar el impacto de distintas técnicas de
+         estructuración de prompts sobre la calidad del código generado mediante
+         inteligencia artificial, el anterior concepto se obtiene gracias a las definiciones de
+         Hernandez et al.(20). En ese sentido, el estudio no se limita únicamente a la
+         generación de conocimiento teórico, sino que plantea el desarrollo de una
+         plataforma automatizada capaz de integrar procesos de generación, análisis y
+         comparación de código utilizando métricas cuantitativas relacionadas con calidad
+         de software. Asimismo, la investigación pretende contribuir al fortalecimiento de
+         prácticas modernas de ingeniería de software basadas en automatización y análisis
+         experimental de modelos de lenguaje.
+
+    3.1.3.Alcance de la Investigación
+
+         El alcance de la investigación será explicativo, debido a que se pretende determinar
+         la influencia que ejercen las distintas técnicas de estructuración de prompts sobre
+         variables relacionadas con calidad del software generado por el modelo de lenguaje
+         de gran escala ChatGPT-4o. En este contexto, el estudio buscará establecer
+
+
+                                                                                            37
+     relaciones de causa y efecto(20) entre las estrategias de Prompt Engineering
+     utilizadas y los resultados obtenidos en términos de mantenibilidad, complejidad,
+     deuda técnica y vulnerabilidades detectadas mediante herramientas automatizadas
+     de análisis estático. Asimismo, la investigación permitirá identificar qué técnicas
+     producen mejores resultados dentro de procesos de generación automática de
+     código.
+
+3.1.4.Método de Investigación
+
+     La presente investigación se desarrollará bajo el método hipotético-deductivo,
+     debido a que parte de la formulación de hipótesis relacionadas con la influencia de
+     las técnicas de estructuración de prompts sobre la calidad del código generado por
+     el modelo de lenguaje de gran escala ChatGPT-4o, las cuales serán sometidas a
+     verificación mediante procedimientos experimentales y análisis cuantitativo. Este
+     método permitirá establecer una relación lógica entre la teoría existente sobre
+     Prompt Engineering, generación automática de código y calidad del software, con
+     los resultados obtenidos durante la ejecución de las pruebas experimentales.
+     Asimismo, la investigación partirá de fundamentos teóricos y antecedentes
+     científicos previamente estudiados para plantear hipótesis específicas que
+     posteriormente serán contrastadas mediante la aplicación de distintas técnicas de
+     prompting sobre problemas estandarizados de programación(20). Los datos
+     obtenidos serán analizados utilizando métricas objetivas relacionadas con
+     mantenibilidad, complejidad ciclomática, deuda técnica, seguridad y exactitud
+     funcional del código generado. En este sentido, el método hipotético-deductivo
+     permitirá comprobar de manera sistemática y objetiva si las variaciones en las
+     técnicas de estructuración de prompts producen diferencias significativas en la
+     calidad del software generado por modelos de inteligencia artificial.
+
+3.1.5.Diseño de la Investigación
+
+     El diseño de la investigación será cuasi-experimental de medidas repetidas, debido
+     a que se manipulará deliberadamente la variable independiente correspondiente a
+     las técnicas de estructuración de prompts, con la finalidad de observar sus efectos
+     sobre las variables dependientes relacionadas con calidad del software(20). Para
+     ello, se aplicarán distintas estrategias de Prompt Engineering sobre problemas de
+     programación previamente definidos y posteriormente se evaluará el código
+                                                                                     38
+         generado utilizando métricas cuantitativas obtenidas mediante herramientas
+         automatizadas de análisis estático. Asimismo, el diseño experimental permitirá
+         mantener condiciones homogéneas durante las pruebas y comparar objetivamente
+         los resultados obtenidos entre las distintas técnicas evaluadas.
+
+3.2. Población y Muestra
+
+    La unidad de análisis de la presente investigación estará conformada por fragmentos de
+    código fuente generados mediante modelos de lenguaje de gran escala (LLMs) a partir
+    de distintas técnicas de estructuración de prompts aplicadas sobre problemas
+    estandarizados de programación obtenidos de plataformas como LeetCode y
+    HackerRank. Asimismo, se considerarán como objeto de evaluación los resultados
+    producidos por una plataforma automatizada propuesta, destinada a gestionar el proceso
+    de generación, análisis y comparación del código mediante métricas de calidad
+    relacionadas con exactitud funcional, mantenibilidad y complejidad. En ese sentido, el
+    estudio se desarrollará dentro del campo de la ingeniería de software y Prompt
+    Engineering, tomando como referencia herramientas de evaluación estática y estándares
+    reconocidos internacionalmente(1)(8).
+
+    3.2.1.Población
+
+         La población de estudio estará conformada por problemas algorítmicos de
+         programación susceptibles de ser resueltos mediante generación automática de
+         código utilizando modelos de lenguaje de gran escala, disponibles en plataformas
+         de evaluación y práctica de programación como LeetCode y HackerRank. Dichos
+         problemas constituyen unidades experimentales apropiadas para analizar el
+         comportamiento de distintas técnicas de Prompt Engineering aplicadas a la
+         generación automática de soluciones computacionales, permitiendo evaluar
+         atributos relacionados con mantenibilidad, complejidad ciclomática, deuda técnica,
+         seguridad y exactitud funcional del código generado (9). Asimismo, la población
+         incluirá las distintas respuestas generadas por los modelos de inteligencia artificial
+         bajo estrategias de Prompt Engineering como zero-shot, few-shot, chain-of-
+         thought   y   role   prompting,    permitiendo     analizar   comparativamente      el
+         comportamiento del código producido en función de métricas relacionadas con
+         exactitud funcional, mantenibilidad y complejidad.
+
+
+                                                                                            39
+    3.2.2.Muestra
+
+         La muestra estará constituida por un subconjunto de problemas algorítmicos
+         seleccionados de manera no probabilística e intencional a partir de plataformas
+         como LeetCode y HackerRank, considerando criterios relacionados con nivel de
+         dificultad, compatibilidad       con el lenguaje de programación seleccionado,
+         disponibilidad de casos de prueba automatizados y pertinencia para el análisis
+         experimental. Sobre cada problema se aplicarán distintas técnicas de Prompt
+         Engineering (zero-shot, few-shot, chain-of-thought y role prompting), generándose
+         fragmentos de código que serán posteriormente evaluados mediante herramientas
+         automatizadas de análisis estático y pruebas funcionales. (1).
+
+3.3. Materiales y Métodos
+
+    3.3.1.Materiales
+
+         3.3.1.1. Recursos de hardware
+
+                    Para el desarrollo de la investigación se utilizaron recursos de hardware
+                    destinados a la construcción, ejecución y evaluación experimental de la
+                    plataforma desarrollada. Entre los principales componentes utilizados se
+                    encontraron los siguientes:
+
+                        • Procesador AMD Ryzen 5 3600.
+
+                        • Memoria RAM de 16 GB.
+
+                        • Unidad de almacenamiento SSD.
+
+                        • Conexión a Internet para consumo de APIs de inteligencia artificial.
+
+                        • Equipo de cómputo         utilizado   para   desarrollo    y   pruebas
+                          experimentales.
+
+                    .
+
+         3.3.1.2. Recursos de software
+
+                    Los recursos de software empleados permitieron desarrollar, ejecutar y
+                    evaluar la plataforma experimental utilizada durante la investigación.
+                    Entre las principales herramientas utilizadas se consideraron:
+
+
+                                                                                             40
+         • Sistema operativo Windows 10.
+
+         • Lenguaje de programación Python.
+
+         • Entornos virtuales para gestión de dependencias.
+
+         • Gestores de paquetes compatibles con Python.
+
+         • Librerías para consumo de APIs y procesamiento de datos.
+
+3.3.1.3. Modelos de lenguaje utilizados
+
+        La generación automática de código fuente se realizó mediante modelos
+        de lenguaje de gran escala accesibles a través de APIs externas. Para ello
+        se utilizaron los siguientes recursos:
+
+         • APIs de modelos de inteligencia artificial.
+
+         • Consumo de tokens para generación automática de código.
+
+         • Solicitudes HTTP para comunicación con modelos generativos.
+
+         • Configuración de prompts para evaluación experimental.
+
+3.3.1.4. Frameworks y librerías de desarrollo
+
+        Para la implementación de la plataforma experimental se utilizaron
+        frameworks y librerías orientadas al desarrollo backend y automatización
+        de procesos. Entre las principales tecnologías utilizadas se encontraron:
+
+         • Librerías para integración con APIs.
+
+         • Herramientas para manipulación de archivos JSON y CSV.
+
+         • Componentes frontend básicos para interacción local.
+
+         • Librerías para automatización de pruebas y procesamiento de
+           resultados.
+
+3.3.1.5. Herramientas de análisis y evaluación de código
+
+        Con el propósito de evaluar las variables dependientes de la investigación
+        se utilizaron herramientas de análisis estático y validación automatizada
+        de software. Entre las principales herramientas consideradas se
+        encontraron:
+
+
+                                                                                41
+         • SonarQube para análisis de calidad y deuda técnica.
+
+         • Radon para medición de complejidad ciclomática y mantenibilidad.
+
+         • Bandit para detección de vulnerabilidades de seguridad.
+
+         • Pruebas automatizadas para validación funcional del código
+           generado.
+
+3.3.1.6. Base de datos y almacenamiento
+
+        El almacenamiento de información experimental se realizó mediante
+        mecanismos ligeros orientados al registro y procesamiento de resultados.
+        Para ello se utilizaron los siguientes recursos:
+
+         • Archivos JSON para almacenamiento estructurado.
+
+         • Archivos CSV para exportación y análisis de resultados.
+
+         • Registro de prompts y respuestas generadas.
+
+         • Almacenamiento de métricas y resultados experimentales.
+
+3.3.1.7. Infraestructura y despliegue
+
+        La plataforma experimental fue implementada en un entorno local
+        utilizando una arquitectura cliente-servidor simplificada. Para ello se
+        emplearon los siguientes componentes:
+
+         • Entorno de ejecución local.
+
+         • Consumo remoto de APIs de inteligencia artificial.
+
+         • Arquitectura cliente-servidor local.
+
+         • Integración mediante conexión a Internet.
+
+3.3.1.8. Herramientas de desarrollo y colaboración
+
+        Las actividades de desarrollo y trabajo colaborativo fueron apoyadas
+        mediante herramientas orientadas al control de versiones y organización
+        del proyecto. Entre las principales herramientas utilizadas se encontraron:
+
+         • Visual Studio Code como entorno de desarrollo.
+
+         • Git para control de versiones.
+
+                                                                                42
+                • GitHub para repositorio colaborativo del proyecto.
+
+    3.3.1.9. Dataset y plataformas de evaluación
+
+             Para el desarrollo de pruebas experimentales y validación de resultados se
+             utilizaron problemas algorítmicos y plataformas de benchmarking
+             reconocidas dentro del área de ingeniería de software. Entre los
+             principales recursos utilizados se consideraron:
+
+                • Problemas algorítmicos de LeetCode.
+
+                • Casos de prueba automatizados.
+
+                • Benchmarks para evaluación de exactitud funcional.
+
+                • Problemas orientados a generación automática de código.
+
+3.3.2.Métodos
+
+    La presente investigación utilizó un enfoque metodológico orientado al desarrollo
+    experimental de una plataforma de evaluación de técnicas de Prompt Engineering
+    aplicadas a generación automática de código mediante modelos de lenguaje de gran
+    escala. Debido a que el proyecto involucró procesos de análisis, diseño,
+    implementación, pruebas y validación de software, se adoptó una metodología de
+    desarrollo ágil con características iterativas e incrementales, permitiendo construir
+    progresivamente los componentes de la plataforma experimental y realizar ajustes
+    continuos durante las fases de evaluación. Asimismo, se integraron técnicas propias
+    de ingeniería de software relacionadas con análisis de requerimientos, diseño
+    arquitectónico, automatización de pruebas y validación experimental de resultados.
+
+    3.3.2.1. Metodología de desarrollo de software
+
+             Para el desarrollo de la plataforma experimental se adoptó una
+             metodología ágil debido a la naturaleza iterativa de la investigación y a la
+             necesidad de realizar ajustes progresivos sobre prompts, herramientas de
+             evaluación y componentes de integración con APIs de inteligencia
+             artificial.   Este   enfoque    permitió     desarrollar   funcionalidades
+             incrementales, validar resultados de manera continua y adaptar el sistema
+             según las necesidades identificadas durante la investigación.
+
+
+                                                                                      43
+        Entre las principales características metodológicas consideradas se
+        encontraron:
+
+          • Desarrollo iterativo e incremental.
+
+          • Integración continua de funcionalidades.
+
+          • Validación progresiva de resultados experimentales.
+
+          • Retroalimentación constante entre desarrollo y pruebas.
+
+          • Flexibilidad para modificar prompts y métricas de evaluación.
+
+3.3.2.2. Técnicas de análisis y diseño
+
+        Durante la etapa de análisis se utilizaron técnicas orientadas a identificar
+        requerimientos    funcionales    y no funcionales      de la plataforma
+        experimental. Asimismo, se definieron los componentes necesarios para
+        integrar modelos de lenguaje,         almacenamiento     de resultados y
+        herramientas de evaluación automatizada.
+
+        Entre las principales técnicas utilizadas se consideraron:
+
+          • Análisis de requerimientos funcionales.
+
+          • Identificación de variables e indicadores experimentales.
+
+          • Diseño de arquitectura cliente-servidor local.
+
+          • Modelado de flujo de procesamiento experimental.
+
+          • Diseño modular de componentes de evaluación.
+
+3.3.2.3. Técnicas de desarrollo e implementación
+
+        La implementación de la plataforma experimental se realizó mediante
+        prácticas orientadas al desarrollo modular y reutilización de componentes
+        de software. Asimismo, se utilizaron técnicas de integración con APIs
+        externas para comunicación con modelos de lenguaje de gran escala.
+
+        Entre las principales actividades desarrolladas se encontraron:
+
+          • Desarrollo backend para automatización de procesos.
+
+          • Integración con APIs de inteligencia artificial.
+                                                                                 44
+         • Implementación de módulos de generación automática de código.
+
+         • Registro automatizado de prompts y respuestas generadas.
+
+         • Implementación de módulos de evaluación y análisis de métricas.
+
+3.3.2.4. Técnicas de pruebas y validación
+
+        Con la finalidad de verificar el funcionamiento correcto de la plataforma
+        y evaluar la calidad del código generado automáticamente, se utilizaron
+        técnicas de pruebas funcionales y análisis automatizado de software. Estas
+        técnicas permitieron medir el impacto de distintas estrategias de Prompt
+        Engineering sobre las variables dependientes de la investigación.
+
+        Entre las principales técnicas de validación utilizadas se consideraron:
+
+         • Pruebas funcionales automatizadas.
+
+         • Análisis estático de código.
+
+         • Validación de exactitud funcional mediante casos de prueba.
+
+         • Comparación experimental entre técnicas de prompting.
+
+         • Evaluación de métricas de mantenibilidad y complejidad.
+
+3.3.2.5. Arquitectura e infraestructura de implementación
+
+        La plataforma experimental fue diseñada utilizando una arquitectura
+        cliente-servidor local orientada al consumo remoto de APIs de
+        inteligencia artificial. Esta arquitectura permitió separar los módulos de
+        interacción con modelos generativos, procesamiento de resultados y
+        evaluación automatizada de código.
+
+        Los principales componentes arquitectónicos considerados fueron:
+
+         • Módulo de gestión de prompts.
+
+         • Módulo de integración con APIs de inteligencia artificial.
+
+         • Módulo de almacenamiento de resultados experimentales.
+
+         • Módulo de evaluación automática de código.
+
+         • Interfaz local para interacción y visualización de resultados.
+
+                                                                                   45
+3.3.2.6. Fases del proyecto
+
+        Fase 1: Fundamentación teórica
+
+        Durante esta fase se realizó la revisión de la literatura relacionada con
+        Prompt Engineering, modelos de lenguaje de gran escala y calidad del
+        software. Asimismo, se definieron los fundamentos teóricos, variables,
+        dimensiones e indicadores que sustentan la investigación.
+
+        Actividades principales:
+
+         • Revisión bibliográfica.
+
+         • Elaboración del marco teórico y conceptual.
+
+         • Definición de variables, dimensiones e indicadores.
+
+         • Formulación de objetivos e hipótesis.
+
+         • Diseño metodológico de la investigación.
+
+        Fase 2: Diseño experimental
+
+        En esta etapa se definieron los elementos necesarios para la ejecución de
+        los experimentos, incluyendo la selección de problemas algorítmicos,
+        técnicas de Prompt Engineering y criterios de evaluación de calidad del
+        código generado.
+
+        Actividades principales:
+
+         • Selección de problemas de LeetCode.
+
+         • Definición de técnicas de Prompt Engineering.
+
+         • Diseño del procedimiento experimental.
+
+         • Definición de métricas e instrumentos de medición.
+
+         • Planificación de las pruebas experimentales.
+
+        Fase 3: Desarrollo de la plataforma experimental
+
+
+
+
+                                                                              46
+Durante esta fase se implementó la plataforma utilizada para automatizar
+la generación, almacenamiento y evaluación del código producido por los
+modelos de lenguaje.
+
+Actividades principales:
+
+ • Diseño de la arquitectura de la plataforma.
+
+ • Desarrollo del backend.
+
+ • Desarrollo del frontend.
+
+ • Integración de herramientas de análisis de código.
+
+ • Implementación de módulos de almacenamiento y procesamiento.
+
+ • Pruebas de funcionamiento de la plataforma.
+
+Fase 4: Ejecución experimental
+
+En esta etapa se ejecutaron los experimentos definidos en el diseño
+metodológico, generando código mediante las distintas técnicas de
+Prompt Engineering y obteniendo las métricas necesarias para el análisis.
+
+Actividades principales:
+
+ • Construcción de prompts experimentales.
+
+ • Generación automática de código.
+
+ • Ejecución de pruebas unitarias automatizadas.
+
+ • Obtención de métricas de calidad del software.
+
+ • Consolidación de datos experimentales.
+
+Fase 5: Análisis de resultados
+
+Durante esta fase se procesaron los datos recolectados para identificar
+diferencias entre las técnicas de Prompt Engineering evaluadas y
+determinar su impacto sobre la calidad del código generado.
+
+Actividades principales:
+
+ • Procesamiento estadístico de datos.
+
+                                                                      47
+                     • Análisis descriptivo e inferencial.
+
+                     • Interpretación de resultados.
+
+                     • Contraste de hipótesis.
+
+                   Fase 6: Elaboración del informe final
+
+                   Finalmente, se documentaron los resultados obtenidos y se elaboró el
+                   informe final de investigación.
+
+                   Actividades principales:
+
+                     • Redacción del capítulo de resultados.
+
+                     • Elaboración de conclusiones y recomendaciones.
+
+                     • Identificación de limitaciones y trabajos futuros.
+
+                     • Correcciones finales.
+
+                     • Entrega del informe final.
+
+3.4. Técnicas de Muestreo
+
+    La presente investigación empleó un muestreo no probabilístico de tipo intencional o por
+    criterio del investigador. Según Hernández Sampieri, Fernández Collado y Baptista, en
+    el muestreo no probabilístico la selección de los elementos depende de las características
+    y criterios definidos por el investigador, en función de los objetivos del estudio y no de
+    la probabilidad estadística de selección (20).
+
+    En este contexto, la muestra estuvo conformada por treinta (30) problemas algorítmicos
+    seleccionados de manera intencional a partir de las plataformas LeetCode y HackerRank,
+    distribuidos en tres niveles de dificultad: diez (10) problemas de nivel fácil, diez (10) de
+    nivel intermedio y diez (10) de nivel difícil. La selección se realizó considerando criterios
+    de pertinencia para la generación automática de código, disponibilidad de casos de
+    prueba automatizados, compatibilidad con el lenguaje de programación Python y
+    adecuación para la evaluación experimental de las técnicas de Prompt Engineering.
+
+    Sobre cada problema seleccionado se aplicaron cuatro tratamientos experimentales
+    correspondientes a las técnicas de estructuración de prompts: Zero-Shot Prompting, Few-
+    Shot Prompting, Chain-of-Thought Prompting y Role Prompting. Cada técnica generó
+
+                                                                                              48
+    una solución de código fuente mediante el modelo de lenguaje ChatGPT-4o bajo
+    condiciones controladas, permitiendo comparar objetivamente su influencia sobre la
+    calidad del código generado.
+
+3.5. Técnicas e Instrumentos de Recolección de Datos
+
+    3.5.1.Técnicas de Recolección de Datos
+
+         La investigación utilizó la técnica de análisis documental automatizado para la
+         recolección de datos. Esta técnica consistió en el análisis sistemático de los
+         fragmentos de código fuente generados por el modelo de lenguaje ChatGPT-4o a
+         partir de las distintas técnicas de estructuración de prompts aplicadas sobre los
+         problemas seleccionados.
+
+         De acuerdo con Hernández Sampieri et al., la recolección de datos en estudios
+         cuantitativos implica obtener información que permita medir las variables de
+         investigación mediante procedimientos objetivos y sistemáticos (20). En ese
+         sentido, la información fue obtenida directamente a partir de los resultados
+         generados por el experimento y procesada mediante herramientas automatizadas
+         de evaluación de software.
+
+         Para la dimensión         exactitud   funcional se emplearon pruebas unitarias
+         automatizadas que permitieron determinar el porcentaje de casos de prueba
+         superados por cada solución generada. Para la dimensión mantenibilidad se
+         utilizaron métricas obtenidas mediante la herramienta SonarQube, específicamente
+         el Maintainability Index y el Technical Debt Ratio. Finalmente, para la dimensión
+         complejidad se utilizó la herramienta Radon, encargada de calcular la complejidad
+         ciclomática del código fuente generado.
+
+    3.5.2.Instrumento de Recolección de Datos
+
+         Como instrumento de recolección de datos se utilizó una Ficha de Registro
+         Experimental, diseñada específicamente para registrar de forma estructurada los
+         resultados obtenidos durante la ejecución de los tratamientos experimentales.
+
+         La ficha permitió registrar información relacionada con la identificación del
+         experimento, problema evaluado, técnica de prompting aplicada y métricas
+
+
+                                                                                         49
+         asociadas a las dimensiones de la variable dependiente: exactitud funcional,
+         mantenibilidad y complejidad. Asimismo, incorporó indicadores cuantitativos
+         obtenidos automáticamente mediante herramientas de análisis estático y pruebas
+         funcionales, garantizando objetividad y uniformidad en el proceso de medición.
+
+          •   El instrumento estuvo conformado por tres dimensiones de evaluación:
+
+          •   Exactitud funcional: porcentaje de pruebas unitarias superadas.
+
+          •   Mantenibilidad: Maintainability Index (MI) y Technical Debt Ratio (TDR).
+
+          •   Complejidad: Complejidad Ciclomática (CC).
+
+         La información consignada en la ficha fue generada automáticamente por la
+         plataforma desarrollada para la investigación, minimizando errores de registro y
+         asegurando la trazabilidad de los resultados experimentales.
+
+3.6. Validez y Confiabilidad
+
+    3.6.1.Validez
+
+         La validez de un instrumento se refiere al grado en que este mide realmente la
+         variable que pretende medir. Según Hernández Sampieri, Fernández Collado y
+         Baptista, la validez hace referencia al grado en que un instrumento refleja
+         adecuadamente el concepto o variable que se desea evaluar (20).
+
+         Para determinar la validez de contenido de la Ficha de Registro Experimental, el
+         instrumento fue sometido a juicio de expertos. Este procedimiento consistió en la
+         evaluación de la pertinencia, claridad, coherencia y relevancia de los indicadores
+         considerados para medir la calidad del código generado por el modelo de lenguaje
+         ChatGPT-4o. Los especialistas seleccionados poseen experiencia en ingeniería de
+         software, calidad de software, inteligencia artificial e investigación científica.
+
+         Posteriormente, las valoraciones emitidas por los expertos fueron procesadas
+         mediante el coeficiente V de Aiken, el cual permite cuantificar el grado de acuerdo
+         entre los jueces respecto a la validez de los elementos incluidos en un instrumento
+         de medición. Este coeficiente es ampliamente utilizado para evaluar la validez de
+         contenido en investigaciones cuantitativas.
+
+         La V de Aiken se calculó mediante la siguiente expresión:
+
+                                                                                              50
+     V = Σs / [n(c − 1)]
+
+     Donde:
+
+        •    V: coeficiente de validez de Aiken.
+
+        •    s: puntuación asignada por cada juez menos la puntuación mínima de la escala
+             utilizada.
+
+        •    n: número de jueces expertos.
+
+        •    c: número de categorías de valoración.
+
+     Los resultados obtenidos permitieron determinar el nivel de validez de contenido
+     de la Ficha de Registro Experimental, garantizando que los indicadores
+     seleccionados representan adecuadamente las dimensiones de exactitud funcional,
+     mantenibilidad y complejidad consideradas en la investigación.
+
+     Se tiene por lo mismo la tabla que representa el calculo anterior:
+
+                        TABLA 1. Calculo de la Validez por V de Aiken
+
+   Nº         Indicadores de    Experto      Experto 2(N.   Experto 3(J.   Promedio por
+                Validación     1(L. Sota)     Gutiérrez)     Mendoza)        Indicador
+    1            Claridad         90%            90%           90%            90.00%
+    2           Objetividad       90%           100%           85%            91.67%
+    3           Actualidad        95%            95%           90%            93.33%
+    4          Organización       90%            90%           90%            90.00%
+    5           Suficiencia       85%            85%           90%            86.67%
+    6        Intencionalidad      90%            95%           85%            90.00%
+    7          Consistencia       90%            90%           90%            90.00%
+    8           Coherencia        95%            90%           90%            91.67%
+    9          Metodología        85%           100%           90%            91.67%
+   10          Conveniencia       90%            85%           80%            85.00%
+            PROMEDIO TOTAL      89.00%         92.00%         88.00%          90.00%
+
+
+
+     Las validaciones correspondientes para la elaboración de esta tabla se encuentran
+     en los Anexos G, H e I.
+
+3.6.2.Confiabilidad
+
+     La confiabilidad se refiere al grado en que un instrumento produce resultados
+     consistentes y estables cuando se aplica repetidamente bajo las mismas
+
+                                                                                      51
+condiciones. Hernández Sampieri, Fernández Collado y Baptista señalan que un
+instrumento es confiable cuando genera mediciones similares al aplicarse en
+diferentes momentos a los mismos sujetos u objetos de estudio, siempre que las
+condiciones permanezcan constantes (20).
+
+Para determinar la confiabilidad de la Ficha de Registro Experimental se empleará
+el método Test-Retest. Este procedimiento consiste en aplicar el instrumento en dos
+momentos diferentes sobre una misma muestra de elementos, manteniendo
+constantes las condiciones de evaluación, con el propósito de verificar la
+estabilidad de las mediciones obtenidas.
+
+En la presente investigación, la prueba se realizará utilizando un subconjunto de
+problemas de programación seleccionados de la muestra experimental. Cada
+problema será procesado nuevamente mediante las mismas técnicas de
+estructuración de prompts, conservando los parámetros de control establecidos:
+modelo ChatGPT-4o, temperatura de generación igual a 0.0, lenguaje de
+programación Python y condiciones idénticas de ejecución.
+
+Posteriormente, los resultados obtenidos en ambas mediciones serán comparados
+mediante el coeficiente de correlación de Pearson, con el fin de determinar el grado
+de estabilidad temporal de las métricas registradas. Un coeficiente elevado indicará
+que el instrumento presenta un nivel adecuado de confiabilidad y que las
+mediciones obtenidas son consistentes y reproducibles.
+
+Asimismo, debido a que los datos son registrados automáticamente por la
+plataforma experimental mediante herramientas de análisis estático y pruebas
+unitarias automatizadas, se minimiza la intervención humana durante el proceso de
+medición, contribuyendo a la estabilidad y consistencia de los resultados obtenidos.
+
+
+
+
+                                                                                 52

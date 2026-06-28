@@ -1,0 +1,329 @@
+CAPITULO I
+                        EL PROBLEMA DE INVESTIGACIÓN
+
+1.1. Planteamiento del Problema
+
+    En los últimos años, la incorporación de modelos de lenguaje de gran escala (LLMs)
+    dentro del desarrollo de software ha transformado la manera en que los programadores
+    producen código, automatizan tareas y optimizan procesos de ingeniería de software. Las
+    herramientas basadas en inteligencia artificial generativa se utilizan para asistir en la
+    creación de algoritmos, documentación, pruebas unitarias y refactorización de
+    aplicaciones, favoreciendo mejoras en productividad y reducción de tiempos de
+    desarrollo(1). Sin embargo, el crecimiento acelerado de estas tecnologías también ha
+    originado preocupaciones relacionadas con la calidad del código generado, debido a
+    posibles problemas de mantenibilidad, deuda técnica, errores lógicos y vulnerabilidades
+    de seguridad que pueden afectar la confiabilidad del software(la precisión cae de 87.2%
+    en programas cortos de menos de 10 líneas a 26.5% cuando se superan las 50 líneas) (2).
+    Por ello, surge la necesidad de evaluar cómo distintas técnicas de Prompt Engineering
+    influyen en la calidad del código producido.
+
+    A nivel internacional, el uso de modelos de lenguaje aplicados al desarrollo de software
+    ha crecido considerablemente por su capacidad para generar código fuente, automatizar
+    procesos de programación y asistir en actividades complejas de ingeniería de software.
+    Al revisar 395 estudios algunos muestran que herramientas basadas en inteligencia
+    artificial generativa pueden producir funciones, pruebas unitarias y componentes
+    completos en diferentes lenguajes, reduciendo tiempos de trabajo y aumentando la
+    productividad(1). No obstante, investigaciones recientes señalan que la calidad del
+    software generado depende en gran medida de la manera en que se estructuran los
+    prompts, ya que técnicas como zero-shot, few-shot o chain-of-thought pueden generar
+    diferencias importantes en mantenibilidad y complejidad(el código generado por IA
+    presenta 34% más complejidad ciclomática), seguridad(22.1% del código generado tiene
+    al menos una vulnerabilidad crítica) y rendimiento del código(el 27.32% del código es
+    más lento en promedio) (3). Frente a ello, investigaciones internacionales buscan
+    desarrollar métodos automatizados de evaluación y buenas prácticas de Prompt
+    Engineering (4).
+
+
+
+                                                                                           1
+En el contexto peruano, la adopción de tecnologías de inteligencia artificial y
+automatización dentro del desarrollo de software viene incrementándose de forma
+progresiva tanto en instituciones públicas como privadas, impulsada por iniciativas de
+transformación digital y el crecimiento del sector tecnológico, aunque el 7% de las
+entidades públicas que mapearon utilizan IA o Ciencia de Datos (5). La utilización de
+modelos de lenguaje y técnicas de Prompt Engineering ha despertado interés académico
+y profesional por su potencial para optimizar tareas de programación y reducir tiempos
+de desarrollo (6). Sin embargo, aún existen limitaciones relacionadas con la evaluación
+objetiva de la calidad del software generado por inteligencia artificial, especialmente en
+aspectos vinculados con mantenibilidad, deuda técnica y seguridad del código.
+Asimismo, todavía son escasas las investigaciones orientadas a comparar técnicas de
+prompting bajo métricas reconocidas de calidad de software.
+
+A nivel local, la región Cusco viene impulsando progresivamente iniciativas orientadas
+a la transformación digital y al fortalecimiento de capacidades tecnológicas dentro de
+instituciones públicas y espacios académicos, promoviendo el uso de herramientas
+digitales para optimizar procesos y servicios, por ejemplo se destinaron S/ 166,461.81
+para el Sistema de Seguridad de la Información (7). Sin embargo, el crecimiento de
+tecnologías basadas en inteligencia artificial generativa también plantea desafíos
+relacionados con la calidad y confiabilidad del software desarrollado mediante modelos
+automatizados. En el ámbito universitario y formativo de la región, el interés por
+incorporar herramientas de inteligencia artificial en programación y desarrollo de
+aplicaciones continúa incrementándose; no obstante, todavía existe una limitada
+investigación orientada a evaluar sistemáticamente cómo las técnicas de Prompt
+Engineering influyen sobre la calidad del código generado, dificultando                 el
+establecimiento de criterios técnicos relacionados con mantenibilidad, seguridad y
+eficiencia (8).
+
+Actualmente, el uso de modelos de lenguaje de gran escala para la generación automática
+de código se ha incrementado considerablemente debido a la capacidad de estas
+tecnologías para asistir en tareas de programación, automatización y desarrollo de
+software. Sin embargo, aún existe una limitada comprensión sobre el impacto que tienen
+las distintas técnicas de Prompt Engineering en la calidad del código producido. En
+muchos casos, los desarrolladores utilizan prompts estructurados de manera empírica,
+
+
+                                                                                        2
+sin criterios técnicos que permitan garantizar mantenibilidad, seguridad, eficiencia o
+reducción de deuda técnica (6). Asimismo, investigaciones recientes señalan que el
+código generado por inteligencia artificial puede presentar problemas de complejidad,
+errores lógicos, vulnerabilidades y baja mantenibilidad cuando las instrucciones
+proporcionadas al modelo no son adecuadamente diseñadas, el 37% del código funcional
+generado en Python presentaba problemas severos de mantenibilidad (2).
+
+Entre las principales causas que originan esta problemática se encuentra el crecimiento
+acelerado del uso de herramientas de inteligencia artificial generativa dentro del
+desarrollo   de software sin metodologías          consolidadas que permitan         evaluar
+objetivamente la calidad del código producido. Asimismo, muchos desarrolladores y
+organizaciones emplean modelos de lenguaje priorizando resultados funcionales
+inmediatos, dejando en segundo plano aspectos relacionados con mantenibilidad,
+seguridad y complejidad del software generado. Otra causa importante corresponde a la
+limitada disponibilidad de plataformas automatizadas que integren mecanismos de
+comparación, análisis estático y evaluación cuantitativa de técnicas de Prompt
+Engineering bajo estándares reconocidos de calidad (3). Del mismo modo, la rápida
+evolución de los modelos de inteligencia artificial dificulta el establecimiento de criterios
+homogéneos de validación y gobernanza tecnológica, por ejemplo los prompts basado en
+instrucciones representan el 37.7% de los problemas de deuda técnica relacionada con
+prompts (4).
+
+Si esta problemática continúa en el tiempo, el uso creciente de modelos de lenguaje para
+la generación automática de código podría favorecer el desarrollo de software con
+mayores niveles de deuda técnica, baja mantenibilidad y vulnerabilidades difíciles de
+identificar durante etapas tempranas de desarrollo. Asimismo, la ausencia de mecanismos
+automatizados para evaluar técnicas de Prompt Engineering podría limitar la capacidad
+de organizaciones y desarrolladores para incorporar prácticas confiables de inteligencia
+artificial dentro de procesos de ingeniería de software. Esta situación también podría
+incrementar tiempos asociados a mantenimiento, corrección y refactorización de
+aplicaciones, todo esto luego de analizar 30 proyectos (9). Del mismo modo, la falta de
+criterios objetivos para comparar estrategias de prompting dificultaría la toma de
+decisiones tecnológicas y la integración eficiente de modelos de lenguaje en entornos
+productivos.
+
+
+                                                                                           3
+    En este contexto, resulta pertinente investigar el impacto de las técnicas de Prompt
+    Engineering sobre la calidad del código generado por modelos de lenguaje de gran escala,
+    debido a la necesidad de establecer mecanismos objetivos que permitan optimizar el uso
+    de inteligencia artificial dentro de la ingeniería de software. La investigación contribuirá
+    a fortalecer el conocimiento relacionado con la evaluación automatizada de software
+    generado por IA, proporcionando evidencia cuantitativa acerca del comportamiento de
+    distintas estrategias de estructuración de prompts bajo métricas reconocidas de calidad.
+    Asimismo, los resultados podrán servir como referencia para desarrolladores,
+    investigadores y organizaciones interesadas en integrar modelos de lenguaje dentro de
+    procesos de desarrollo de software con mayores criterios de mantenibilidad, seguridad y
+    eficiencia.
+
+1.2. Formulación del Problema
+
+    1.2.1.Problema General
+
+          ¿Cómo influyen las técnicas de estructuración de prompts en la calidad del código
+          generado por el modelo de lenguaje de gran escala ChatGPT-4o?
+
+    1.2.2.Problemas Específicos
+
+          PE1. ¿Cómo influyen las técnicas de estructuración de prompts en la exactitud
+                  funcional del código generado por el modelo de lenguaje de gran escala
+                  ChatGPT-4o?
+
+          PE2. ¿Cómo influyen las técnicas de estructuración              de prompts en la
+                  mantenibilidad del código generado por el modelo de lenguaje de gran escala
+                  ChatGPT-4o?
+
+          PE3. ¿Cómo influyen las técnicas de estructuración de prompts en la complejidad
+                  del código generado por el modelo de lenguaje de gran escala ChatGPT-4o?
+
+1.3. Objetivos de la Investigación
+
+    1.3.1.Objetivo General
+
+          Determinar la influencia de las técnicas de estructuración de prompts en la calidad
+          del código generado por el modelo de lenguaje de gran escala ChatGPT-4o.
+
+
+                                                                                              4
+    1.3.2.Objetivos Específicos
+
+          OE1. Determinar la influencia de las técnicas de estructuración de prompts en la
+                  exactitud funcional del código generado por el modelo de lenguaje de gran
+                  escala ChatGPT-4o.
+
+          OE2. Determinar la influencia de las técnicas de estructuración de prompts en la
+                  mantenibilidad del código generado por el modelo de lenguaje de gran escala
+                  ChatGPT-4o.
+
+          OE3. Determinar la influencia de las técnicas de estructuración de prompts en la
+                  complejidad del código generado por el modelo de lenguaje de gran escala
+                  ChatGPT-4o.
+
+1.4. Justificación de la Investigación
+
+    1.4.1.Justificación Teórica
+
+          La presente investigación posee una justificación teórica debido a que busca
+          fortalecer el conocimiento relacionado con la influencia de las técnicas de
+          estructuración de prompts sobre la calidad del código generado por modelos de
+          lenguaje de gran escala (LLMs), particularmente en tareas vinculadas al desarrollo
+          de software. Estudios sobre arquitecturas basadas en transformers y modelos
+          generativos evidencian que el comportamiento de estos sistemas depende del
+          contexto y de las instrucciones proporcionadas durante la interacción, lo cual
+          influye en los resultados generados (10). Asimismo, investigaciones recientes
+          sobre Prompt Engineering señalan que la manera en que se diseñan las
+          instrucciones puede modificar significativamente el desempeño de los modelos de
+          lenguaje, afectando aspectos relacionados con coherencia, precisión y capacidad
+          de resolución de tareas complejas, incluida la generación automática de código
+          (11).
+
+          En ese contexto, aunque diversos trabajos demostraron el potencial de los modelos
+          generativos para asistir actividades de programación, todavía existe limitada
+          evidencia comparativa sobre cómo distintas técnicas de Prompt Engineering, como
+          zero-shot, few-shot, chain-of-thought y role prompting, influyen cuantitativamente
+          en atributos de calidad del software tales como exactitud funcional, mantenibilidad
+
+                                                                                           5
+     y complejidad (3)(12) . En consecuencia, la presente investigación contribuirá al
+     fortalecimiento del conocimiento teórico relacionado con inteligencia artificial
+     aplicada a la ingeniería de software, utilizando métricas objetivas y criterios
+     sustentados en estándares de calidad como ISO/IEC 25010 para comprender mejor
+     el impacto de las estrategias de prompting sobre el código generado
+     automáticamente (8).
+
+1.4.2.Justificación Práctica
+
+     La investigación presenta una justificación práctica debido a que permitirá
+     desarrollar una plataforma automatizada orientada a la comparación y evaluación
+     de distintas técnicas de estructuración de prompts aplicadas a la generación
+     automática de código mediante modelos de lenguaje. A través de esta plataforma
+     será posible analizar métricas relacionadas con calidad, exactitud funcional,
+     mantenibilidad y complejidad utilizando herramientas automatizadas de análisis
+     estático. Asimismo, los resultados obtenidos podrán servir como referencia para
+     desarrolladores, estudiantes e investigadores interesados en adoptar modelos de
+     inteligencia artificial dentro de procesos de desarrollo de software, facilitando la
+     identificación de estrategias de prompting que generen mejores resultados en
+     términos de calidad y eficiencia (1). De igual manera, la investigación contribuirá
+     al fortalecimiento de buenas prácticas relacionadas con el uso responsable de
+     inteligencia artificial generativa en ingeniería de software, permitiendo optimizar
+     procesos de programación y evaluación automatizada dentro de entornos
+     tecnológicos modernos.
+
+1.4.3.Justificación Metodológica
+
+     La presente investigación posee una justificación metodológica debido a que
+     propone un enfoque cuantitativo y experimental orientado a evaluar el impacto de
+     distintas técnicas de estructuración de prompts sobre variables medibles
+     relacionadas con calidad del software generado por inteligencia artificial. El
+     estudio utilizará métricas objetivas obtenidas mediante herramientas de análisis
+     estático y problemas estandarizados provenientes de plataformas reconocidas
+     como LeetCode y HackerRank, permitiendo garantizar condiciones homogéneas
+     de evaluación y comparación experimental. Asimismo, la implementación de una
+     plataforma automatizada facilitará la recolección sistemática de datos, ejecución
+                                                                                       6
+         de pruebas y generación de resultados comparativos bajo criterios técnicos
+         reproducibles (9). Del mismo modo, la investigación podrá servir como referencia
+         metodológica para futuros estudios relacionados con inteligencia artificial aplicada
+         al desarrollo de software, automatización de procesos y evaluación de calidad en
+         sistemas basados en modelos de lenguaje.
+
+1.5. Delimitación de la Investigación
+
+    1.5.1.Delimitación Espacial
+
+         La presente investigación se desarrollará en el contexto académico de la sede
+         Cusco de la Universidad Continental, ubicado en el sector de Angostura camino al
+         distrito de Saylla, considerada como entorno institucional de referencia para la
+         ejecución del estudio experimental y el desarrollo de las actividades de
+         investigación vinculadas al área de ingeniería de sistemas e informática. No
+         obstante, debido a la naturaleza tecnológica y experimental del estudio, la
+         delimitación espacial se centrará principalmente en un entorno computacional
+         donde se realizará la generación, análisis y evaluación de fragmentos de código
+         producidos mediante el modelo de lenguaje ChatGPT-4o, empleando plataformas
+         digitales de programación como LeetCode y HackerRank, así como herramientas
+         automatizadas de análisis estático orientadas a medir atributos de calidad del
+         software. En ese sentido, la investigación se circunscribe tanto al espacio
+         académico institucional como al ecosistema digital utilizado para la ejecución del
+         experimento.
+
+    1.5.2.Delimitación Temporal
+
+         En términos operativos, la investigación comprenderá el periodo entre los meses
+         de julio y noviembre de 2026, abarcando las fases de revisión bibliográfica, diseño
+         metodológico, implementación del entorno experimental, ejecución de pruebas,
+         análisis de resultados y elaboración del informe final de investigación.
+
+    1.5.3.Delimitación Social
+
+         Para la presente investigación este criterio no aplica, debido a que el estudio se
+         desarrolla bajo un diseño experimental y cuantitativo enfocado en el análisis
+         automatizado de código fuente. Los sujetos de evaluación son fragmentos de
+
+                                                                                           7
+          software generados por un modelo de lenguaje y medidos a través de herramientas
+          de análisis estático, por lo que no se involucra a grupos humanos, usuarios o
+          personal de desarrollo dentro de la recolección de datos.
+
+1.6. Hipótesis y Variables
+
+    1.6.1.Hipótesis
+
+          Las técnicas de estructuración de prompts influyen significativa y positivamente
+          en la calidad del código generado por el modelo de lenguaje de gran escala
+          ChatGPT-4o.
+
+    1.6.2.Hipótesis Específicas
+
+          HE1. Las técnicas de estructuración de prompts influyen significativa            y
+                positivamente en la exactitud funcional del código generado por el modelo
+                de lenguaje de gran escala ChatGPT-4o.
+
+          HE2. Las técnicas de estructuración de prompts influyen significativa            y
+                positivamente en la mantenibilidad del código generado por el modelo de
+                lenguaje de gran escala ChatGPT-4o.
+
+          HE3. Las técnicas de estructuración de prompts influyen significativa            y
+                positivamente en la complejidad del código generado por el modelo de
+                lenguaje de gran escala ChatGPT-4o.
+
+    1.6.3.Definición de Variables
+
+          Variable independiente: Técnicas de estructuración de prompts, conjunto de
+          estrategias utilizadas para formular instrucciones dirigidas a modelos de lenguaje
+          de gran escala con el objetivo de generar código fuente de manera automatizada,
+          optimizando el razonamiento, contextualización y precisión de las respuestas
+          producidas por la inteligencia artificial.
+
+          La variable será controlada al aplicar las distintas técnicas de Prompt Engineering
+          sobre problemas estandarizados de programación, determinando la influencia en la
+          variable dependiente posteriormente con la ayuda de los resultados obtenidos en
+          el código generado por modelos de lenguaje.
+
+
+                                                                                           8
+     Variable dependiente: Calidad de código generado, grado en que el código fuente
+     generado por modelos de lenguaje cumple características relacionadas con la
+     exactitud funcional, mantenibilidad y complejidad.
+
+     La variable será medida mediante métricas cuantitativas obtenidas a través de
+     herramientas automatizadas de análisis estático aplicadas sobre el código generado
+     por modelos de lenguaje utilizando distintas técnicas de Prompt Engineering.
+
+1.6.4.Matriz de Consistencia
+
+     Encontrara el contenido de esta tabla en el Anexo A.
+
+1.6.5.Matriz de Operacionalización de Variables
+
+     Usted podrá encontrar el contenido de la operacionalización en el Anexo B.
+
+
+
+
+                                                                                     9

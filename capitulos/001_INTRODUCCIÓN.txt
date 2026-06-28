@@ -1,0 +1,62 @@
+INTRODUCCIÓN
+
+La transformación digital y el avance acelerado de la inteligencia artificial generativa
+han redefinido la manera en que se desarrollan soluciones tecnológicas en diversos
+ámbitos del conocimiento. En particular, los modelos de lenguaje de gran escala han
+demostrado una capacidad creciente para asistir en tareas complejas de programación,
+permitiendo generar código fuente a partir de instrucciones expresadas en lenguaje
+natural. Sin embargo, más allá de la funcionalidad inmediata de las soluciones
+producidas, surge la necesidad de evaluar rigurosamente la calidad del código generado,
+considerando atributos fundamentales como la exactitud funcional, la mantenibilidad y
+la complejidad. En este contexto, las técnicas de Prompt Engineering adquieren especial
+relevancia, debido a que la forma en que se estructuran las instrucciones puede influir
+significativamente en el comportamiento y desempeño de los modelos de inteligencia
+artificial. Por ello, resulta necesario desarrollar investigaciones que permitan
+comprender de manera objetiva el impacto de dichas técnicas sobre la calidad del
+software generado automáticamente.
+
+El Capítulo I presenta el planteamiento del problema de investigación, abordando la
+realidad problemática relacionada con el crecimiento del uso de modelos de inteligencia
+artificial en actividades de programación y las limitaciones existentes respecto a la
+calidad del código generado. Asimismo, se formulan los problemas de investigación,
+los objetivos generales y específicos, la justificación del estudio, las hipótesis y la
+delimitación de la investigación, estableciendo las bases que orientan el desarrollo del
+trabajo.
+
+El Capítulo II desarrolla el marco teórico que sustenta la investigación. En este apartado
+se presentan los antecedentes internacionales y nacionales relacionados con la
+generación automática de código, la inteligencia artificial aplicada al desarrollo de
+software y las técnicas de Prompt Engineering. Además, se exponen las bases teóricas
+referentes a los modelos de lenguaje de gran escala, la generación automática de código,
+la calidad del software y las herramientas            utilizadas para su evaluación,
+complementándose con el marco conceptual de los principales términos empleados en
+el estudio.
+
+
+
+
+                                                                                        vi
+El Capítulo III describe la metodología de investigación adoptada para el desarrollo del
+estudio. En esta sección se especifican el enfoque, tipo, nivel y diseño de investigación,
+así como la identificación de las variables, la población y muestra de estudio, las
+técnicas e instrumentos de recolección de datos y los procedimientos utilizados para la
+ejecución del experimento y el análisis de los resultados. Asimismo, se detallan las
+herramientas y métricas empleadas para evaluar la calidad del código generado por el
+modelo de inteligencia artificial.
+
+El Capítulo IV presenta los aspectos administrativos de la investigación, incluyendo la
+planificación de actividades, los recursos necesarios para la ejecución del estudio y el
+presupuesto estimado para su desarrollo. De igual manera, se incorporan las referencias
+bibliográficas   que respaldan       científicamente   la investigación   y los anexos
+correspondientes, los cuales contienen los instrumentos, matrices y demás documentos
+complementarios utilizados durante el proceso investigativo.
+
+Finalmente, la investigación busca aportar evidencia empírica sobre la influencia de las
+técnicas de Prompt Engineering en la calidad del código generado por modelos de
+inteligencia artificial, contribuyendo al desarrollo de conocimientos aplicables tanto en
+el ámbito académico como en la práctica profesional de la ingeniería de software.
+
+
+
+
+                                                                                       vii
