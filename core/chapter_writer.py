@@ -11,6 +11,9 @@ import re
 from pathlib import Path
 
 import utils
+
+from core.logger import get_logger
+
 from core.models import Chapter
 
 
@@ -24,6 +27,7 @@ class ChapterWriter:
             parents=True,
             exist_ok=True
         )
+
 
     # --------------------------------------------------------
 
@@ -44,7 +48,7 @@ class ChapterWriter:
 
     def write(self, chapters: list[Chapter]):
 
-        utils.info("Guardando capítulos...")
+        get_logger().info("Guardando capítulos...")
 
         index = []
 
@@ -82,7 +86,7 @@ class ChapterWriter:
 
             })
 
-            utils.ok(filename)
+            get_logger().ok(filename)
 
         # -------------------------------------
 
@@ -99,4 +103,4 @@ class ChapterWriter:
                 ensure_ascii=False
             )
 
-        utils.ok("index.json generado.")
+        get_logger().ok("index.json generado.")

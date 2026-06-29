@@ -43,27 +43,6 @@ class Color:
 # MENSAJES
 # ==========================================================
 
-def info(msg: str):
-
-    print(f"{Color.BLUE}[INFO]{Color.RESET} {msg}")
-
-
-def ok(msg: str):
-
-    print(f"{Color.GREEN}[ OK ]{Color.RESET} {msg}")
-
-
-def warn(msg: str):
-
-    print(f"{Color.YELLOW}[WARN]{Color.RESET} {msg}")
-
-
-def error(msg: str):
-
-    print(f"{Color.RED}[ERROR]{Color.RESET} {msg}")
-
-    sys.exit(1)
-
 
 # ==========================================================
 # DIRECTORIOS

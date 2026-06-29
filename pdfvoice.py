@@ -12,6 +12,7 @@ import utils
 
 from core.project_manager import ProjectManager
 from core.tts.manager import TTSManager
+from core.logger import get_logger
 
 from player.mpv_player import MPVPlayer
 
@@ -30,6 +31,7 @@ class PDFVoice:
 
         self.player = MPVPlayer()
 
+
     # ---------------------------------------------------------
 
     @property
@@ -41,7 +43,7 @@ class PDFVoice:
 
     def prepare(self):
 
-        utils.info("Abriendo proyecto...")
+        get_logger().info("Abriendo proyecto...")
 
         manager = ProjectManager(self.pdf_file)
 
@@ -51,7 +53,7 @@ class PDFVoice:
             self.project.audio_dir
         )
 
-        utils.ok("Proyecto preparado.")
+        get_logger().ok("Proyecto preparado.")
 
         return self.project
 
@@ -63,17 +65,8 @@ class PDFVoice:
 
     # ---------------------------------------------------------
 
-    def list(self):
-
-        print()
-
-        for chapter in self.project:
-
-            print(
-                f"{chapter.number:02d} - {chapter.title}"
-            )
-
-        print()
+    def list(self): 
+        """listar"""
 
     # ---------------------------------------------------------
 

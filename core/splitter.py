@@ -12,6 +12,8 @@ from pathlib import Path
 import config
 import utils
 
+from core.logger import get_logger
+
 from core.models import Chapter
 
 SPECIAL_SECTIONS = {
@@ -55,9 +57,10 @@ class ChapterSplitter:
 
         self.headers =[]
 
+
     def load(self):
 
-        utils.info("Leyendo archivo de texto...")
+        get_logger().info("Leyendo archivo de texto...")
 
         with self.text_file.open(
             encoding="utf-8",
@@ -66,7 +69,7 @@ class ChapterSplitter:
 
             self.lines = [x.rstrip() for x in f]
 
-        utils.ok(f"{len(self.lines)} líneas cargadas.")
+        get_logger().ok(f"{len(self.lines)} líneas cargadas.")
         self.index_line = self.find_index()
 
     def score(self, line: str):
@@ -156,7 +159,7 @@ class ChapterSplitter:
         Detecta posibles capítulos.
         """
 
-        utils.info("Buscando capítulos...")
+        get_logger().info("Buscando capítulos...")
 
         encontrados = 0
 
@@ -172,8 +175,8 @@ class ChapterSplitter:
 
                 self.headers.append((i,title))
 
-                print(f"{i:5d}  [{s:2d}]  {title}")
-        utils.ok(f"{encontrados} posibles capítulos encontrados.")
+
+        get_logger().ok(f"{encontrados} posibles capítulos encontrados.")
 
     def merge_title(self, index: int):
         """
@@ -224,7 +227,7 @@ class ChapterSplitter:
 
             if upper in INDEX_SECTIONS:
 
-                utils.ok(f"Índice encontrado en la línea {i}")
+                get_logger().ok(f"Índice encontrado en la línea {i}")
 
                 return i
 
@@ -235,13 +238,13 @@ class ChapterSplitter:
         Construye objetos Chapter a partir de los encabezados detectados.
         """
 
-        utils.info("Construyendo capítulos...")
+        get_logger().info("Construyendo capítulos...")
 
         self.chapters = []
 
         if not self.headers:
 
-            utils.warn("No hay encabezados detectados.")
+            get_logger().warn("No hay encabezados detectados.")
 
             return []
 
@@ -270,28 +273,9 @@ class ChapterSplitter:
 
             self.chapters.append(chapter)
 
-        utils.ok(f"{len(self.chapters)} capítulos construidos.")
+        get_logger().ok(f"{len(self.chapters)} capítulos construidos.")
 
         return self.chapters
 
     def summary(self):
-
-        print()
-
-        print("-" * 70)
-
-        for c in self.chapters:
-
-            print(
-
-                f"{c.number:02d} "
-
-                f"{c.start_line:5d}-{c.end_line:5d} "
-
-                f"{c.words:6d} palabras "
-
-                f"{c.title}"
-
-            )
-
-        print("-" * 70)
+        """helo"""

@@ -91,26 +91,7 @@ class Project:
     # -------------------------
 
     def summary(self):
-
-        print()
-
-        print("=" * 60)
-
-        print("Proyecto")
-
-        print("=" * 60)
-
-        print("PDF:", self.pdf_file.name)
-
-        print("Capítulos:", self.chapter_count)
-
-        print("Palabras:", self.total_words)
-
-        print("Caracteres:", self.total_characters)
-
-        print("Idioma:", self.language)
-
-        print("=" * 60)
+        """Solo es texto"""
 
 
     # -------------------------------------------------

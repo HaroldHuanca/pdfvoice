@@ -13,6 +13,7 @@ from core.project import Project
 from core.extractor import PDFExtractor
 from core.splitter import ChapterSplitter
 from core.chapter_writer import ChapterWriter
+from core.logger import get_logger
 
 
 class ProjectManager:
@@ -25,7 +26,7 @@ class ProjectManager:
 
     def prepare(self):
 
-        utils.info("Preparando proyecto...")
+        get_logger().info("Preparando proyecto...")
 
         extractor = PDFExtractor(self.pdf_file)
 
@@ -71,6 +72,6 @@ class ProjectManager:
 
         )
 
-        utils.ok("Proyecto listo.")
+        get_logger().ok("Proyecto listo.")
 
         return project

@@ -1,116 +1,208 @@
 """
 controller.py
 
-Controlador de alto nivel para PDFVoice.
+Controlador principal de PDFVoice.
+
+Las interfaces (CLI, TUI, GUI) únicamente hablan con esta clase.
 """
 
 from __future__ import annotations
 
+from pathlib import Path
+
 from pdfvoice import PDFVoice
 
 
-class PDFController:
+class Controller:
 
-    def __init__(self, pdf):
+    def __init__(self, pdf: str | Path):
 
-        self.pdf = PDFVoice(pdf)
+        self.pdf = Path(pdf)
 
-        self.pdf.prepare()
+        self.app = PDFVoice(self.pdf)
 
-    # -------------------------------------------------
+        self.chapter = 1
 
-    def list(self):
+        self.prepared = False
 
-        self.pdf.list()
+    # ---------------------------------------------------------
+    # Proyecto
+    # ---------------------------------------------------------
 
-    # -------------------------------------------------
+    def prepare(self):
 
-    def play(self, number=None):
+        if self.prepared:
+            return
 
-        if number is None:
+        self.app.prepare()
 
-            number = self.pdf.project.current_chapter + 1
+        self.prepared = True
 
-        self.pdf.play(number)
+    # ---------------------------------------------------------
+    # Información
+    # ---------------------------------------------------------
 
-    # -------------------------------------------------
+    @property
+    def project(self):
 
-    def pause(self):
+        return self.app.project
 
-        self.pdf.pause()
+    @property
+    def chapters(self):
 
-    # -------------------------------------------------
+        return self.project.chapters
 
-    def resume(self):
+    @property
+    def chapter_count(self):
 
-        self.pdf.resume()
+        return len(self.project.chapters)
 
-    # -------------------------------------------------
+    def current_chapter(self):
 
-    def stop(self):
+        return self.chapter
 
-        self.pdf.stop()
+    def current(self):
 
-    # -------------------------------------------------
+        return self.project.chapters[self.chapter - 1]
+
+    # ---------------------------------------------------------
+    # Navegación
+    # ---------------------------------------------------------
+
+    def first(self):
+
+        self.chapter = 1
+
+    def last(self):
+
+        self.chapter = self.chapter_count
 
     def next(self):
 
-        self.pdf.next()
+        if self.chapter < self.chapter_count:
 
-    # -------------------------------------------------
+            self.chapter += 1
 
     def previous(self):
 
-        self.pdf.previous()
+        if self.chapter > 1:
 
-    # -------------------------------------------------
+            self.chapter -= 1
+
+    def goto(self, number):
+
+        if 1 <= number <= self.chapter_count:
+
+            self.chapter = number
+
+    # ---------------------------------------------------------
+    # Audio
+    # ---------------------------------------------------------
+
+    def generate(self):
+
+        self.app.generate(self.chapter)
+
+    def play(self):
+
+        self.app.play(self.chapter)
+
+    def pause(self):
+
+        self.app.pause()
+
+    def resume(self):
+
+        self.app.resume()
+
+    def stop(self):
+
+        self.app.stop()
+
+    # ---------------------------------------------------------
+    # Reproducción continua
+    # ---------------------------------------------------------
+
+    def play_next(self):
+
+        self.next()
+
+        self.play()
+
+    def play_previous(self):
+
+        self.previous()
+
+        self.play()
+
+    # ---------------------------------------------------------
+    # Propiedades
+    # ---------------------------------------------------------
 
     def speed(self, value):
 
-        self.pdf.speed(float(value))
-
-    # -------------------------------------------------
+        self.app.speed(value)
 
     def volume(self, value):
 
-        self.pdf.volume(int(value))
+        self.app.volume(value)
 
-    # -------------------------------------------------
-
-    def seek(self, seconds):
-
-        self.pdf.seek(float(seconds))
-
-    # -------------------------------------------------
-
-    def generate(self, chapter):
-
-        self.pdf.generate(chapter)
-
-    # -------------------------------------------------
-
-    def generate_all(self):
-
-        self.pdf.generate_all()
-
-    # -------------------------------------------------
+    # ---------------------------------------------------------
+    # Estado
+    # ---------------------------------------------------------
 
     def status(self):
 
-        s = self.pdf.status()
+        return self.app.status()
 
-        print()
+    @property
+    def state(self):
 
-        print("=" * 50)
+        return self.status()["state"]
 
-        for k, v in s.items():
+    @property
+    def position(self):
 
-            print(f"{k:12}: {v}")
+        return self.status()["position"]
 
-        print("=" * 50)
+    @property
+    def duration(self):
 
-    # -------------------------------------------------
+        return self.status()["duration"]
+
+    @property
+    def speed_value(self):
+
+        return self.status()["speed"]
+
+    @property
+    def volume_value(self):
+
+        return self.status()["volume"]
+
+    # ---------------------------------------------------------
+    # Información del capítulo actual
+    # ---------------------------------------------------------
+
+    @property
+    def title(self):
+
+        return self.current().title
+
+    @property
+    def filename(self):
+
+        return self.current().filename
+
+    @property
+    def audio(self):
+
+        return self.current().audio_file
+
+    # ---------------------------------------------------------
+    # Cierre
+    # ---------------------------------------------------------
 
     def close(self):
 
-        self.pdf.close()
+        self.app.close()

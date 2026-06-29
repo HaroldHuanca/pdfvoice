@@ -13,6 +13,7 @@ import utils
 from core.models import Chapter
 from core.chunker import ChapterChunker
 from .base import BaseTTSEngine
+from core.logger import get_logger
 
 
 class PiperEngine(BaseTTSEngine):
@@ -22,6 +23,7 @@ class PiperEngine(BaseTTSEngine):
         super().__init__(output_dir)
 
         self.chunker = ChapterChunker()
+
 
     # ----------------------------------------------------
 
@@ -76,7 +78,7 @@ class PiperEngine(BaseTTSEngine):
 
             if wav.exists():
 
-                utils.info(
+                get_logger().info(
                     f"[{chunk.number}/{total}] existente"
                 )
 
@@ -86,7 +88,7 @@ class PiperEngine(BaseTTSEngine):
 
                 continue
 
-            utils.info(
+            get_logger().info(
                 f"[{chunk.number}/{total}] generando..."
             )
 
@@ -110,10 +112,13 @@ class PiperEngine(BaseTTSEngine):
 
                 text=True,
 
-                check=True
+                check=True,
+
+                stdout=subprocess.DEVNULL,
+
+                stderr=subprocess.DEVNULL,
 
             )
-
             chunk.audio_file = str(wav)
 
             chunk.generated = True
@@ -194,4 +199,4 @@ class PiperEngine(BaseTTSEngine):
 
         chapter.generated = True
 
-        utils.ok(f"Capítulo {chapter.number} listo.")
+        get_logger().ok(f"Capítulo {chapter.number} listo.")

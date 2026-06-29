@@ -26,6 +26,7 @@ import config
 import utils
 
 from .base import BasePlayer
+from core.logger import get_logger
 
 
 class MPVPlayer(BasePlayer):
@@ -54,6 +55,7 @@ class MPVPlayer(BasePlayer):
         self.current_file = None
 
         self.state = self.STOPPED
+
 
     # ---------------------------------------------------------
 
@@ -97,7 +99,7 @@ class MPVPlayer(BasePlayer):
 
         self._cleanup_socket()
 
-        utils.info("Iniciando MPV...")
+        get_logger().info("Iniciando MPV...")
 
         self.state = self.STARTING
 
@@ -140,7 +142,7 @@ class MPVPlayer(BasePlayer):
 
                 self.state = self.READY
 
-                utils.ok("MPV listo.")
+                get_logger().ok("MPV listo.")
 
                 return
 
@@ -153,11 +155,15 @@ class MPVPlayer(BasePlayer):
     # ---------------------------------------------------------
 
     def _ensure_running(self):
-        """
-        Garantiza que MPV esté disponible.
-        """
+
+        print("process =", self.process)
+
+        if self.process is not None:
+            print("poll =", self.process.poll())
 
         if self.process is None:
+
+            print("START()")
 
             self.start()
 
@@ -165,9 +171,7 @@ class MPVPlayer(BasePlayer):
 
         if self.process.poll() is not None:
 
-            utils.warn(
-                "MPV finalizó. Reiniciando..."
-            )
+            print("RESTART()")
 
             self.start()
 
@@ -449,7 +453,7 @@ class MPVPlayer(BasePlayer):
 
         audio = str(audio)
 
-        utils.info(f"Reproduciendo:\n{audio}")
+        get_logger().info(f"Reproduciendo:\n{audio}")
 
         self._command(
 
@@ -790,7 +794,7 @@ class MPVPlayer(BasePlayer):
 
         self._cleanup_socket()
 
-        utils.ok("MPV cerrado.")
+        get_logger().ok("MPV cerrado.")
 
     # ---------------------------------------------------------
 

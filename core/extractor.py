@@ -11,6 +11,7 @@ from pathlib import Path
 
 import config
 import utils
+from core.logger import get_logger
 
 
 class PDFExtractor:
@@ -57,11 +58,11 @@ class PDFExtractor:
 
         if self.text_file.exists() and not force:
 
-            utils.info("Usando texto en caché.")
+            get_logger().info("Usando texto en caché.")
 
             return self.text_file
 
-        utils.info("Extrayendo texto del PDF...")
+        get_logger().info("Extrayendo texto del PDF...")
 
         command = [
 
@@ -93,9 +94,10 @@ class PDFExtractor:
 
         except subprocess.CalledProcessError as e:
 
+            get_logger().error(e.stderr)
             utils.error(e.stderr)
 
-        utils.ok("Texto extraído correctamente.")
+        get_logger().ok("Texto extraído correctamente.")
 
         return self.text_file
 
@@ -104,24 +106,5 @@ class PDFExtractor:
         Muestra las primeras líneas del texto.
         """
 
-        if not self.text_file.exists():
 
-            utils.warn("Primero debes ejecutar extract().")
 
-            return
-
-        print()
-
-        with self.text_file.open(
-            encoding="utf-8",
-            errors="ignore"
-        ) as f:
-
-            for i, line in enumerate(f):
-
-                if i >= lines:
-                    break
-
-                print(line.rstrip())
-
-        print()
