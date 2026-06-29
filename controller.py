@@ -38,12 +38,19 @@ class Controller:
 
         self.prepared = True
 
+    def _ensure_prepared(self):
+
+        if not self.prepared:
+            self.prepare()
+
     # ---------------------------------------------------------
     # Información
     # ---------------------------------------------------------
 
     @property
     def project(self):
+
+        self._ensure_prepared()
 
         return self.app.project
 
@@ -65,19 +72,29 @@ class Controller:
 
         return self.project.chapters[self.chapter - 1]
 
+    def current_index(self):
+
+        return self.chapter - 1
+
     # ---------------------------------------------------------
     # Navegación
     # ---------------------------------------------------------
 
     def first(self):
 
+        self._ensure_prepared()
+
         self.chapter = 1
 
     def last(self):
 
+        self._ensure_prepared()
+
         self.chapter = self.chapter_count
 
     def next(self):
+
+        self._ensure_prepared()
 
         if self.chapter < self.chapter_count:
 
@@ -85,11 +102,15 @@ class Controller:
 
     def previous(self):
 
+        self._ensure_prepared()
+
         if self.chapter > 1:
 
             self.chapter -= 1
 
     def goto(self, number):
+
+        self._ensure_prepared()
 
         if 1 <= number <= self.chapter_count:
 
@@ -101,23 +122,72 @@ class Controller:
 
     def generate(self):
 
+        self._ensure_prepared()
+
         self.app.generate(self.chapter)
 
     def play(self):
+
+        self._ensure_prepared()
 
         self.app.play(self.chapter)
 
     def pause(self):
 
+        self._ensure_prepared()
+
         self.app.pause()
 
     def resume(self):
+
+        self._ensure_prepared()
 
         self.app.resume()
 
     def stop(self):
 
+        self._ensure_prepared()
+
         self.app.stop()
+
+    # ---------------------------------------------------------
+    # Generación de audio
+    # ---------------------------------------------------------
+
+    def generate_chapter(self, number):
+
+        self._ensure_prepared()
+
+        chapter = self.project[number - 1]
+
+        chapter.generating = True
+
+        try:
+
+            self.app.generate(number)
+
+        finally:
+
+            chapter.generating = False
+
+    def generate_missing(self):
+
+        self._ensure_prepared()
+
+        for chapter in self.project.chapters:
+
+            if (
+                chapter.audio_file is None
+                or not Path(chapter.audio_file).exists()
+            ):
+
+                try:
+
+                    self.generate_chapter(chapter.number)
+
+                except Exception:
+
+                    continue
 
     # ---------------------------------------------------------
     # Reproducción continua
@@ -141,11 +211,29 @@ class Controller:
 
     def speed(self, value):
 
+        self._ensure_prepared()
+
         self.app.speed(value)
+
+        self.project.speed = value
 
     def volume(self, value):
 
+        self._ensure_prepared()
+
         self.app.volume(value)
+
+    def seek(self, seconds):
+
+        self._ensure_prepared()
+
+        self.app.seek(seconds)
+
+    def restart(self):
+
+        self._ensure_prepared()
+
+        self.app.restart()
 
     # ---------------------------------------------------------
     # Estado

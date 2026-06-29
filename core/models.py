@@ -38,6 +38,8 @@ class Chapter:
 
     generated: bool = False
 
+    generating: bool = False
+
     chunks: list[Chunk] = field(default_factory=list)
 
     def __str__(self):

@@ -6,6 +6,7 @@ Lista de capítulos.
 
 from __future__ import annotations
 
+from pathlib import Path
 import curses
 
 from tui.theme import Theme
@@ -94,13 +95,22 @@ class ChapterList:
 
             marker = "▶" if i == self.selected else " "
 
+            if chapter.generating:
+                status = "GEN"
+            elif chapter.generated and chapter.audio_file:
+                status = "OK"
+            else:
+                status = "..."
+
             text = (
 
                 f"{marker} "
 
                 f"{chapter.number:02d} "
 
-                f"{chapter.title}"
+                f"{chapter.title} "
+
+                f"[{status}]"
 
             )
 

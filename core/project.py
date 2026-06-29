@@ -91,7 +91,25 @@ class Project:
     # -------------------------
 
     def summary(self):
-        """Solo es texto"""
+        """Devuelve un resumen del proyecto."""
+
+        return {
+            "pdf_file": str(self.pdf_file),
+            "chapter_count": len(self.chapters),
+            "total_words": self.total_words,
+            "total_characters": self.total_characters,
+            "current_chapter": self.current_chapter + 1 if self.chapters else None,
+            "chapters": [
+                {
+                    "number": chapter.number,
+                    "title": chapter.title,
+                    "words": chapter.words,
+                    "characters": chapter.characters,
+                    "audio_file": chapter.audio_file,
+                }
+                for chapter in self.chapters
+            ],
+        }
 
 
     # -------------------------------------------------

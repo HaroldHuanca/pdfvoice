@@ -10,7 +10,6 @@ import hashlib
 import logging
 import re
 import shutil
-import sys
 import time
 
 from pathlib import Path
@@ -42,6 +41,27 @@ class Color:
 # ==========================================================
 # MENSAJES
 # ==========================================================
+
+def info(message: str):
+
+    logging.info(message)
+
+
+def ok(message: str):
+
+    logging.info(message)
+
+
+def warn(message: str):
+
+    logging.warning(message)
+
+
+def error(message: str):
+
+    logging.error(message)
+
+    raise RuntimeError(message)
 
 
 # ==========================================================
@@ -139,14 +159,15 @@ def check_dependencies():
     if config.PDFTOTEXT_BIN is None:
         missing.append("pdftotext")
 
+    if config.FFMPEG_BIN is None:
+        missing.append("ffmpeg")
+
     if missing:
 
         error(
             "Faltan dependencias:\n\n"
             + "\n".join(f" • {x}" for x in missing)
         )
-    if config.FFMPEG_BIN is None:
-        missing.append("ffmpeg")
 
     ok("Dependencias verificadas.")
 
@@ -156,6 +177,8 @@ def check_dependencies():
 # ==========================================================
 
 def init_logger():
+
+    ensure_directories()
 
     logfile = config.LOG_DIR / "pdfvoice.log"
 

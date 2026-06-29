@@ -140,6 +140,14 @@ class MPVPlayer(BasePlayer):
 
             if socket_file.exists():
 
+                # Verificar que el IPC esté realmente listo
+                try:
+                    sock = self._connect()
+                    sock.close()
+                except Exception:
+                    time.sleep(0.05)
+                    continue
+
                 self.state = self.READY
 
                 get_logger().ok("MPV listo.")
@@ -156,23 +164,13 @@ class MPVPlayer(BasePlayer):
 
     def _ensure_running(self):
 
-        print("process =", self.process)
-
-        if self.process is not None:
-            print("poll =", self.process.poll())
-
         if self.process is None:
-
-            print("START()")
 
             self.start()
 
             return
 
         if self.process.poll() is not None:
-
-            print("RESTART()")
-
             self.start()
 
     # ---------------------------------------------------------
@@ -196,6 +194,8 @@ class MPVPlayer(BasePlayer):
                     socket.AF_UNIX,
                     socket.SOCK_STREAM,
                 )
+
+                sock.settimeout(2.0)
 
                 sock.connect(self.socket_path)
 
@@ -245,7 +245,10 @@ class MPVPlayer(BasePlayer):
 
             while not data.endswith(b"\n"):
 
-                chunk = sock.recv(4096)
+                try:
+                    chunk = sock.recv(4096)
+                except socket.timeout:
+                    break
 
                 if not chunk:
                     break
@@ -261,7 +264,10 @@ class MPVPlayer(BasePlayer):
 
             except json.JSONDecodeError:
 
-                return None
+                try:
+                    return json.loads(data.decode("utf-8").strip())
+                except Exception:
+                    return None
 
         finally:
 
@@ -291,16 +297,25 @@ class MPVPlayer(BasePlayer):
         )
 
         if response is None:
+            # Reintentar una vez si hay un fallo transitorio en el IPC.
+            try:
+                self.quit()
+                self.start()
+                response = self._send({"command": list(args)})
+            except Exception:
+                response = None
+
+        if response is None:
 
             raise RuntimeError(
-                "MPV no devolvió respuesta."
+                "MPV no devolvió respuesta. Verifica que el socket IPC esté accesible y MPV esté en ejecución."
             )
 
         if response.get("error") != "success":
 
             raise RuntimeError(
 
-                f"MPV respondió: {response}"
+                f"MPV respondió con error: {response.get('error')} - {response}"
 
             )
 

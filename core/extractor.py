@@ -106,5 +106,14 @@ class PDFExtractor:
         Muestra las primeras líneas del texto.
         """
 
+        if not self.text_file.exists():
+            return []
+
+        with self.text_file.open(
+            encoding="utf-8",
+            errors="ignore",
+        ) as f:
+            return [line.rstrip("\n") for _, line in zip(range(lines), f)]
+
 
 

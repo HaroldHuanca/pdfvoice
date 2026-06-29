@@ -26,6 +26,10 @@ class ProjectManager:
 
     def prepare(self):
 
+        utils.ensure_directories()
+
+        utils.check_dependencies()
+
         get_logger().info("Preparando proyecto...")
 
         extractor = PDFExtractor(self.pdf_file)
@@ -53,6 +57,18 @@ class ProjectManager:
         writer = ChapterWriter(chapters_dir)
 
         writer.write(chapters)
+
+        for chapter in chapters:
+
+            chapter_audio_dir = audio_dir / f"{chapter.number:03d}"
+
+            final_audio = chapter_audio_dir / "final.wav"
+
+            if final_audio.exists():
+
+                chapter.audio_file = str(final_audio)
+
+                chapter.generated = True
 
         project = Project(
 

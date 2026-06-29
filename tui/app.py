@@ -7,6 +7,7 @@ Aplicación TUI principal de PDFVoice.
 from __future__ import annotations
 
 from pathlib import Path
+import threading
 
 from controller import Controller
 
@@ -73,31 +74,39 @@ class App:
 
     def load(self):
 
-        self.controller.prepare()
+        try:
 
-        project = self.controller.project
+            self.controller.prepare()
 
-        # Header
+            project = self.controller.project
 
-        self.header.update(
+            # Header
 
-            project.pdf_file.name,
+            self.header.update(
 
-            project.chapter_count,
+                project.pdf_file.name,
 
-        )
+                project.chapter_count,
 
-        # Lista
+            )
 
-        self.chapterlist.set_chapters(
+            # Lista
 
-            project.chapters
+            self.chapterlist.set_chapters(
 
-        )
+                project.chapters
 
-        # Estado inicial
+            )
 
-        self.refresh_status()
+            # Estado inicial
+
+            self.refresh_status()
+
+        except Exception:
+
+            self.screen.stop()
+
+            raise
 
     # ==========================================================
     # Refrescar información
@@ -335,13 +344,13 @@ class App:
 
     def seek_forward(self):
 
-        self.controller.app.player.seek(15)
+        self.controller.seek(15)
 
     # ----------------------------------------------------------
 
     def seek_backward(self):
 
-        self.controller.app.player.seek(-15)
+        self.controller.seek(-15)
 
 
     # ==========================================================
@@ -421,6 +430,13 @@ class App:
         self.load()
 
         self.update()
+
+        # Generar audios faltantes en segundo plano.
+        self._generation_thread = threading.Thread(
+            target=self.controller.generate_missing,
+            daemon=True,
+        )
+        self._generation_thread.start()
 
     # ==========================================================
     # Finalización

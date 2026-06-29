@@ -8,8 +8,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import utils
-
 from core.project_manager import ProjectManager
 from core.tts.manager import TTSManager
 from core.logger import get_logger
@@ -41,6 +39,14 @@ class PDFVoice:
 
     # ---------------------------------------------------------
 
+    def _ensure_ready(self):
+
+        if not self.ready:
+
+            raise RuntimeError("Proyecto no preparado")
+
+    # ---------------------------------------------------------
+
     def prepare(self):
 
         get_logger().info("Abriendo proyecto...")
@@ -61,16 +67,24 @@ class PDFVoice:
 
     def chapters(self):
 
+        self._ensure_ready()
+
         return self.project.chapters
 
     # ---------------------------------------------------------
 
-    def list(self): 
-        """listar"""
+    def list(self):
+        """Devuelve la lista de capítulos preparados."""
+
+        self._ensure_ready()
+
+        return self.project.chapters
 
     # ---------------------------------------------------------
 
     def generate(self, number):
+
+        self._ensure_ready()
 
         chapter = self.project[number]
 
@@ -82,6 +96,8 @@ class PDFVoice:
 
     def generate_all(self):
 
+        self._ensure_ready()
+
         self.tts.generate_all(
             self.project.chapters
         )
@@ -89,6 +105,8 @@ class PDFVoice:
     # ---------------------------------------------------------
 
     def play(self, number):
+
+        self._ensure_ready()
 
         chapter = self.project[number]
 
@@ -108,11 +126,15 @@ class PDFVoice:
 
     def pause(self):
 
+        self._ensure_ready()
+
         self.player.pause()
 
     # ---------------------------------------------------------
 
     def resume(self):
+
+        self._ensure_ready()
 
         self.player.resume()
 
@@ -120,11 +142,15 @@ class PDFVoice:
 
     def stop(self):
 
+        self._ensure_ready()
+
         self.player.stop()
 
     # ---------------------------------------------------------
 
     def next(self):
+
+        self._ensure_ready()
 
         chapter = self.project.next()
 
@@ -134,6 +160,8 @@ class PDFVoice:
 
     def previous(self):
 
+        self._ensure_ready()
+
         chapter = self.project.previous()
 
         self.play(chapter.number)
@@ -142,11 +170,15 @@ class PDFVoice:
 
     def restart(self):
 
+        self._ensure_ready()
+
         self.player.restart()
 
     # ---------------------------------------------------------
 
     def seek(self, seconds):
+
+        self._ensure_ready()
 
         self.player.seek(seconds)
 
@@ -154,11 +186,15 @@ class PDFVoice:
 
     def speed(self, value):
 
+        self._ensure_ready()
+
         self.player.speed(value)
 
     # ---------------------------------------------------------
 
     def volume(self, value):
+
+        self._ensure_ready()
 
         self.player.volume(value)
 
@@ -166,11 +202,15 @@ class PDFVoice:
 
     def status(self):
 
+        self._ensure_ready()
+
         return self.player.status()
 
     # ---------------------------------------------------------
 
     def current(self):
+
+        self._ensure_ready()
 
         return self.project.current()
 
@@ -178,7 +218,9 @@ class PDFVoice:
 
     def summary(self):
 
-        self.project.summary()
+        self._ensure_ready()
+
+        return self.project.summary()
 
     # ---------------------------------------------------------
 
